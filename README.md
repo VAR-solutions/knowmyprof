@@ -1,3 +1,3 @@
 # knowmyprof
 IT-202 Project
-This is readme
+We are using LAMP stack for this project.

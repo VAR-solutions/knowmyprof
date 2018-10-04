@@ -11,12 +11,15 @@ if (isset($_POST['submit'])) {
         require "../common.php";
 
         $connection = new PDO($dsn, $username, $password, $options);
-
-        $sql = "SELECT *
-						FROM users
-						WHERE id = :roll";
-
         $roll = $_POST['roll'];
+$roll = mysqli_real_escape_string($connection, $roll);
+$password = $_POST['password'];
+$password = mysqli_real_escape_string($connection, $password);
+
+
+        $sql = "SELECT id FROM users WHERE id='" . $id . "' AND password='" . $password . "'";
+
+        
 
         $statement = $connection->prepare($sql);
         $statement->bindParam(':roll', $roll, PDO::PARAM_STR);

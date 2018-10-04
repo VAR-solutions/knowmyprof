@@ -1,0 +1,11 @@
+CREATE DATABASE pro;
+use pro;
+
+CREATE TABLE users (
+	id INT(11) UNSIGNED UNIQUE,
+	firstname VARCHAR(30) NOT NULL,
+	lastname VARCHAR(30) NOT NULL,
+	email VARCHAR(50) NOT NULL,
+	password VARCHAR(15) NOT NULL,
+	date TIMESTAMP
+);

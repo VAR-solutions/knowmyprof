@@ -40,4 +40,3 @@ if (isset($_POST['submit'])) {
     <input type="submit">
 </form>
 <?php include "templates/footer.php"; ?>
-

@@ -9,9 +9,10 @@
 require "config.php";
 
 try {
-    $connection = new PDO("mysql:host=$host", $username, $password, $options);
+    // $connection = new PDO("mysql:host=$host", $username, $password, $options);
+    $db = mysqli_connect('localhost', 'root', 'password', 'it');
     $sql = file_get_contents("data/init.sql");
-    $connection->exec($sql);
+    $db->exec($sql);
 
     echo "Database and table users created successfully.";
 } catch(PDOException $error) {

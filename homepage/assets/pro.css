@@ -1,0 +1,226 @@
+@media (min-width: 768px) {
+  /* show 4 items */
+  .carousel-inner .active,
+  .carousel-inner .active + .carousel-item,
+  .carousel-inner .active + .carousel-item + .carousel-item,
+  .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item{
+    display: block;
+  }
+
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item,
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item {
+    transition: none;
+  }
+
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
+    position: relative;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+    position: absolute;
+    top: 0;
+    right: -25%;
+    z-index: -1;
+    display: block;
+    visibility: visible;
+  }
+
+  /* left or forward direction */
+  .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+  .carousel-item-next.carousel-item-left + .carousel-item,
+  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item,
+  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+    position: relative;
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  /* farthest right hidden item must be abso position for animations */
+  .carousel-inner .carousel-item-prev.carousel-item-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    visibility: visible;
+  }
+
+  /* right or prev direction */
+  .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+  .carousel-item-prev.carousel-item-right + .carousel-item,
+  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item,
+  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item{
+    position: relative;
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+    display: block;
+    visibility: visible;
+  }
+}
+.navbar{
+  height: 60px;
+  margin-top: 10px;
+}
+.nav-item{
+  padding-right: 60px;
+}
+.nav-link{
+  
+}
+.container{
+  /* float: none;
+  margin-left: 10px;
+  margin-right: 10px; */
+  width: 80%;
+  
+}
+
+
+.img-fluid{
+  
+  
+   /* border-radius: 10px; */
+  /* border-bottom-left-radius: 40%;
+  border-bottom-right-radius: 40%;  */
+  height: 200px;
+  border-radius: 30px;
+  
+  
+
+}
+.carousel-inner{
+  max-height: 500px;
+  width: 10%;
+}
+
+
+body{
+  
+  /* background-image: url("vaporwave-version-classic-firewatch-wallpaper.png"); */
+}
+
+.mb-3{
+  color: rgb(83, 189, 224);
+}
+.card{
+  background-color: white;
+  border-radius: 30px;
+  /* box-shadow: 4px 4px 4px 4px rgba(128, 128, 128, 0.55); */
+  box-shadow: 5px 5px 25px grey;
+  width: 270px;
+  filter: grayscale(75%);
+  
+
+  
+}
+.card:hover{
+  filter: grayscale(0);
+  transform: scale(1.05);
+}
+.arrborder{ 
+  color: #296dd2;
+  /* margin-top: 10%; */
+} 
+.arrborder:hover{
+  color: #296dd2;
+  opacity: 1;
+}
+.arrborder:visited{
+  color: #296dd2;
+  opacity: 1;
+}
+
+
+
+.card:hover{
+  box-shadow: 7px 7px 40px #296dd28f;
+}
+.carousel-item{
+  padding-left: 20px;
+  padding-bottom: 25px;
+  padding-top: 15px;
+  
+}
+.carousel-control-prev{
+  opacity: 1;
+  
+  width: 8%;
+  height: 50px;
+  margin-top: 10%;
+
+}
+.carousel-control-next{
+  opacity: 1;
+  
+  width: 8%;
+  height: 50px;
+  margin-top: 10%;
+  padding-right: 40px;
+  
+}
+.nav-item{
+  float: right;
+}
+
+
+.search {
+  width: 100%;
+  position: relative
+}
+
+.searchTerm {
+  float: left;
+  margin-top: 450px;
+  width: 100%;
+  border-radius: 40px 0 0 40px;
+  padding: 5px;
+  height: 40px;
+  border: none;
+  box-shadow: 7px 7px 40px grey;
+  background: rgba(170, 168, 168, 0.5);
+  color:black;
+  outline: none;  
+}
+.searchTerm:hover{
+  box-shadow: 7px 7px 40px #296dd28f;
+
+}
+
+
+.searchButton {
+  position: absolute; 
+  margin-top: 445px; 
+  right: -30px;
+  outline: none;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: #296dd2;
+  text-align: center;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 7px 7px 40px grey;
+}
+.searchButton:hover{
+  box-shadow: 7px 7px 40px #296dd28f;
+}
+.fa-search{
+  outline: none;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -2,19 +2,25 @@
 <html>  
 <head>
   <title>Know my Prof</title>
+  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   
+
+
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/solid.css" integrity="sha384-uKQOWcYZKOuKmpYpvT0xCFAs/wE157X5Ua3H5onoRAOCNkJAMX/6QF0iXGGQV9cP" crossorigin="anonymous">
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/fontawesome.css" integrity="sha384-HU5rcgG/yUrsDGWsVACclYdzdCcn5yU8V/3V84zSrPDHwZEdjykadlgI6RHrxGrJ" crossorigin="anonymous"> 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
   <link rel="stylesheet" type="text/css" href="assets/pro.css">
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 
 
-<body background = "gradient_back.png">
+<body>
     
   <nav class="navbar navbar-expand-sm ">
     <!-- Brand/logo -->
@@ -28,22 +34,22 @@
         <a class="nav-link" href="#">HOME</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">SIGN UP</a>
+        <a class="nav-link" data-toggle = "modal" data-target ="#popUpWindow">SIGN UP</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">LOGIN</a>
+        <a class="nav-link" data-toggle = "modal" data-target ="#popUp">LOGIN</a>
       </li>
     </ul>
   </nav>
 
 <div class="container-fluid">
     
-    
+
   
   
   
-<br>
-<br>
+<p style="font-family: 'Dancing Script', cursive; text-align: center; font-size: 30px; font-weight: 550; color:#4b4949 "><q>Good teachers know how to bring out the best in students. 
+</q></p>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner row w-100 mx-auto">
       <div class="carousel-item col-md-3  active">
@@ -126,16 +132,88 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-  
+  <div class="wrap-check">
+  <div class="wrap">
+      <div class="search">
+         <input type="text" class="searchTerm" placeholder="SEARCH HERE">      
+         <button type="submit" class="searchButton">
+           <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+    </div>
 </div>
 
-<div class="wrap">
-  <div class="search">
-     <input type="text" class="searchTerm" placeholder="      SEARCH HERE">      
-     <button type="submit" class="searchButton">
-       <i class="fa fa-search"></i>
-    </button>
-  </div>
+
+<footer>
+    <div class="footer-copyright text-left py-3"><i class="far fa-copyright" style = "margin-left: 8px;"></i> 2018 Know My Professor
+        <a id = "git"href="https://github.com/VAR-solutions/knowmyprof"><span style = "float: right; margin-right: 8px;">View Source Code on:  <i class="fab fa-github"></i></span></a>
+     </div>
+</footer>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="popUpWindow">
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- header -->
+          <div class="modal-header">
+              <p class="modal-title">SIGN UP</p>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            
+          </div>
+          <!-- body -->
+          <div class="modal-body">
+            <form role="form">
+              <div class="form-group">
+                <input type="fname" class="form-control" placeholder="First Name"/>
+                <input type="lname" class="form-control" placeholder="Last Name"/>
+                <input type="number" class="form-control" placeholder="Roll Number"/>
+
+                <input type="email" class="form-control" placeholder="Email"/>
+                <input type="password" class="form-control" placeholder="Password" />
+                <input type="password" class="form-control" placeholder="Re-enter Password" />
+
+              </div>
+            </form> 
+          </div>
+          <!-- footer -->
+          <div class="modal-footer">
+            <button class="btn btn-primary btn-block" id = "sign">SIGN UP</button>
+          </div>
+          
+        </div>
+    </div>
+</div>
+
+<!-- modal for login -->
+<div class="modal fade" id="popUp">
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- header -->
+          <div class="modal-header">
+              <p class="modal-title">LOGIN</p>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            
+          </div>
+          <!-- body -->
+          <div class="modal-body">
+            <form role="form">
+              <div class="form-group">
+                <input type="number" class="form-control" placeholder="Roll Number"/>
+                <input type="password" class="form-control" placeholder="Password" />
+
+              </div>
+            </form> 
+          </div>
+          <!-- footer -->
+          <div class="modal-footer">
+            <button class="btn btn-primary btn-block" id = "sign">LOGIN</button>
+          </div>
+          
+        </div>
+    </div>
 </div>
 <script src="assets/project.js"></script>
 

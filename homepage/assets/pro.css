@@ -63,23 +63,66 @@
     visibility: visible;
   }
 }
+
+body{
+  font-family: 'Arvo', serif;
+}
 .navbar{
   height: 60px;
-  margin-top: 10px;
-}
-.nav-item{
-  padding-right: 60px;
+  padding-top: 10px;
+  position:sticky;
+  background-color:white;
+  margin-bottom: 10px;
+  
 }
 .nav-link{
   
-}
-.container{
-  /* float: none;
-  margin-left: 10px;
-  margin-right: 10px; */
-  width: 80%;
+  color: black;
   
 }
+.nav-item{
+  padding-right: 60px;
+  letter-spacing: 0.10em;
+  float: right;
+  margin-top: -15px;
+  
+}
+
+li > a {
+  position: relative;
+  color:#296dd2;
+  text-decoration: none;
+}
+
+li > a:hover {
+  color:#296dd2;
+}
+li > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color:#296dd2;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+li > a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+/* .container{
+  float: none;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 80%;
+  
+} */
 
 
 .img-fluid{
@@ -100,10 +143,6 @@
 }
 
 
-body{
-  
-  /* background-image: url("vaporwave-version-classic-firewatch-wallpaper.png"); */
-}
 
 .mb-3{
   color: rgb(83, 189, 224);
@@ -115,10 +154,11 @@ body{
   box-shadow: 5px 5px 25px grey;
   width: 270px;
   filter: grayscale(75%);
-  
+  font-family: 'Arvo', serif;
 
   
 }
+
 .card:hover{
   filter: grayscale(0);
   transform: scale(1.05);
@@ -143,7 +183,7 @@ body{
 }
 .carousel-item{
   padding-left: 20px;
-  padding-bottom: 25px;
+  padding-bottom: 40px;
   padding-top: 15px;
   
 }
@@ -164,28 +204,28 @@ body{
   padding-right: 40px;
   
 }
-.nav-item{
-  float: right;
-}
-
 
 .search {
   width: 100%;
-  position: relative
+  position: relative;
+  
 }
 
 .searchTerm {
   float: left;
-  margin-top: 450px;
+  
   width: 100%;
   border-radius: 40px 0 0 40px;
   padding: 5px;
-  height: 40px;
+  height: 50px;
   border: none;
   box-shadow: 7px 7px 40px grey;
   background: rgba(170, 168, 168, 0.5);
   color:black;
-  outline: none;  
+  outline: none; 
+  padding-left: 50px;
+  padding-right: 30px; 
+  
 }
 .searchTerm:hover{
   box-shadow: 7px 7px 40px #296dd28f;
@@ -195,7 +235,7 @@ body{
 
 .searchButton {
   position: absolute; 
-  margin-top: 445px; 
+   
   right: -30px;
   outline: none;
   width: 50px;
@@ -214,13 +254,229 @@ body{
 }
 .fa-search{
   outline: none;
+  border: none;
 }
 
 /*Resize the wrap to see the search bar change!*/
 .wrap{
   width: 30%;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 35%;
+  padding-top: 25px;  
+}
+.wrap-check {
+  width: 100%;
+}
+.container-fluid {
+  width: 100%;
+  height: max-content;
+  margin-bottom: 94px;
+}
+
+/* MODAL */
+
+/* #popUpWindow{
+  background: lightblue; 
+} */
+.modal-title{
+  
+  
+  font-size: 30px;
+  font-family: 'Arvo', serif;
+  font-weight: 70;
+  color: #296dd2;
+}
+.modal-header{
+   
+}
+.form-control{
+  padding: 10px;
+  margin-top: 10px;
+  outline: none;
+  
+  border-top: none;
+  border:none;
+  border-bottom:1px solid #313131b9;
+  border-radius: 0;
+}
+
+input{
+  outline:none;
+}
+#sign{
+  background-color: #296dd2;
+}
+
+
+/* CSS FOR PROF*/
+
+.container{
+  box-shadow: 7px 7px 40px grey;
+  border-radius: 25px; 
+  margin-top: 15px;
+  width: 100;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+.dp{
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  box-shadow: 7px 7px 40px grey;
+  margin-top:25px;
+  margin-left: 35px;
+
+}
+#test{
+  border: 2px solid black;  
+}
+.data{
+  padding-left: 50px;
+}
+.inter{
+  text-align: center; 
+  border-right:6px solid rgba(170, 168, 168);
+  height:250px;
+  
+  /* display: block; */
+  width: 2px;
+}
+.achievements{
+  text-align: center;
+  border-right:6px solid rgba(170, 168, 168);
+  height:250px;
+  
+  /* display: block; */
+  width: 2px;   
+}
+.publi{
+  text-align: center;  
+}
+.head{
+  color: #296dd2;
+  
+}
+.matter{
+  color: black;
+  text-align: center;
+  margin-top: 20px;
+}
+.part{
+   display: block;
+    height: 1px;
+    background-color: rgba(170, 168, 168);
+    border-radius: 40px 40px 40px 40px;
+    border: 2px solid rgba(170, 168, 168, 0.5);
+    /* margin: 1em 0; */
+    margin-top:10px; 
+}
+
+.name{
+  padding-top: 25px;
+  font-size: 40px;
+  
+}
+ul{
+  padding-top: 20px;
+  margin-left:-21px;
+  
+}
+li{
+  padding: 0;
+}
+.contacts{
+  margin-top: 20px;
+}
+
+.review{
+  text-align: center;
+  
+  color: rgb(114, 113, 113);
+}
+.review:hover{
+  color:black;
+}
+.fa-envelope{
+  margin-left: 35px;
+  color: rgb(114, 113, 113);
+}
+.fa-linkedin{
+  margin-left: 95px;
+  color: rgb(114, 113, 113);
+}
+.fa-globe-americas{
+  margin-left: 95px;
+  color: rgb(114, 113, 113);
+}
+.mail{
+  color: rgb(114, 113, 113);
+}
+.cont:hover{
+  color: black;
+}
+#heading{
+    color: #296dd2;
+    text-align: left;
+    margin-bottom: 30px;
+}
+.alt{
+  align-content: center;
+  
+  
+}
+.reviewdata{
+  text-align: left;
+  font-size: 20px;
+  font-family: 'Alegreya', serif;
+  font-style: italic;
+
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:#296dd2d7 ;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 25px;
+  padding: 20px;
+  width: 200px;
+    height: 70px;
+  transition:all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.7s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#git:active{
+  color: black;
+}
+#git:visited{
+  color:black;
 }

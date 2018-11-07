@@ -19,14 +19,18 @@ $db = mysqli_connect('localhost', 'root', 'password', 'it');
 if (isset($_POST['reg_user'])) {
   // receive all input values from the form
   // $username = mysqli_real_escape_string($db, $_POST['username']);
-  $email = mysqli_real_escape_string($db, $_POST['email']);
+  	$email = mysqli_real_escape_string($db, $_POST['email']);
   // $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
   // $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
-  $fname = mysqli_real_escape_string($db, $_POST['fname']);
+  	$fname = mysqli_real_escape_string($db, $_POST['fname']);
 	$lname = mysqli_real_escape_string($db, $_POST['lname']);
 	$aoi = mysqli_real_escape_string($db,$_POST['aoi']);
-  $qual = mysqli_real_escape_string($db, $_POST['qual']);
-  $achi = mysqli_real_escape_string($db, $_POST['achi']);
+  	$qual = mysqli_real_escape_string($db, $_POST['qual']);
+  	$achi = mysqli_real_escape_string($db, $_POST['achi']);
+  	$pub = mysqli_real_escape_string($db,$_POST['pub']);
+  	$web = mysqli_real_escape_string($db,$_POST['web']);
+  	$linkedin = mysqli_real_escape_string($db,$_POST['linkedin']);
+	$exp = mysqli_real_escape_string($db,$_POST['exp']);
 
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
@@ -41,8 +45,8 @@ if (isset($_POST['reg_user'])) {
 				if (count($errors) == 0 && $ttt) {
 					// $password = md5($password_1);//encrypt the password before saving in the database
 			
-					$query = "INSERT INTO prof (fname, lname, aoi,email,qual, achi,image)
-								VALUES('$fname', '$lname','$aoi' ,'$email','$qual', '$achi', '$imgContent')";
+					$query = "INSERT INTO prof (fname, lname, aoi,email,qual, achi,image,pub,web,linkedin,exp)
+								VALUES('$fname', '$lname','$aoi' ,'$email','$qual', '$achi', '$imgContent','$pub','$web','$linkedin','$exp')";
 					mysqli_query($db, $query);
 					// $_SESSION['username'] = $username;
 					$_SESSION['success'] = "You are now logged in";
@@ -61,10 +65,7 @@ if (isset($_POST['reg_user'])) {
 
 	<form method="post" action="newprof.php" enctype="multipart/form-data">
   		<?php include('errors.php'); ?>
-  		<!-- <div class="input-group">
-	  		<label>Roll No.</label>
-	  		<input type="text" name="username" value="<?php echo $username; ?>">
-			</div> -->
+  		
   		<div class="input-group">
 	  		<label>First Name</label>
   			<input type="text" name="fname" value="<?php echo $fname; ?>">
@@ -79,15 +80,31 @@ if (isset($_POST['reg_user'])) {
     	</div>
     	<div class="input-group">
   			<label>Qualification</label>
-  			<input type="text" name="qual" value="<?php echo $qual; ?>">
+  			<textarea type="text" name="qual" value="<?php echo $qual; ?>"></textarea>
     	</div>
     	<div class="input-group">
   			<label>Area of interest</label>
-  			<input type="text" name="aoi" value="<?php echo $aoi; ?>">
+  			<textarea type="text" name="aoi" value="<?php echo $aoi; ?>"></textarea>
   		</div>    
     	<div class="input-group">
   			<label>Achivements</label>
-  			<input type="text" name="achi" value="<?php echo $achi; ?>">
+  			<textarea name="achi" value="<?php echo $achi; ?>"> </textarea>
+		</div>
+		<div class="input-group">
+  			<label>Publications</label>
+  			<textarea name="pub" value="<?php echo $pub; ?>"> </textarea>
+		</div>
+		<div class="input-group">
+  			<label>Past Experience</label>
+  			<textarea name="exp" value="<?php echo $exp; ?>"> </textarea>
+		</div>
+		<div class="input-group">
+  			<label>Website</label>
+  			<input name="web" value="<?php echo $web; ?>">
+		</div>
+		<div class="input-group">
+  			<label>Linkedin Profile</label>
+  			<input name="linkedin" value="<?php echo $linkedin; ?>">
     	</div>
     	<div class="input-group">
   			<label>Display Picture</label>
@@ -98,4 +115,4 @@ if (isset($_POST['reg_user'])) {
   		</div>
 		</form>
 	</body>
-	</html>
+</html>

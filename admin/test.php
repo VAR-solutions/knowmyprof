@@ -45,5 +45,6 @@ if(isset($_POST["submit"])){
         <input type="file" name="image"/>
         <input type="submit" name="submit" value="UPLOAD"/>
     </form>
+    <a href="<?php echo 't.php?id=1' ?>" > click</a>
 </body>
 </html>

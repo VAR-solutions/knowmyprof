@@ -5,6 +5,6 @@
  *
  */
 
- $db = mysqli_connect('localhost', 'root', 'password', 'it');
+ $db = mysqli_connect('localhost', 'itbois', 'password', 'it');
 
 ?>

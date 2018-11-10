@@ -154,7 +154,7 @@ li > a:hover:before {
   box-shadow: 5px 5px 25px grey;
   width: 270px;
   font-family: 'Arvo', serif;
-
+  
   
 }
 .card-name{
@@ -246,6 +246,10 @@ li > a:hover:before {
   box-shadow: 7px 7px 40px #296dd28f;
 
 }
+.searchTerm:hover + .searchButton{
+  box-shadow: 7px 7px 40px #296dd28f;
+
+}
 
 
 .searchButton {
@@ -319,6 +323,9 @@ input{
   outline:none;
 }
 #sign{
+  background-color: #296dd2;
+}
+#signup{
   background-color: #296dd2;
 }
 
@@ -560,3 +567,5 @@ li{
 .fa-chevron-circle-left:before{
   color: #296dd2;
 }
+
+

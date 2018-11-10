@@ -1,8 +1,12 @@
+<?php
+  $_SESSION['page'] = $_SERVER['REQUEST_URI'];
+  
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
-  <title>Profile</title>
+  <title>KMP</title>
   <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
@@ -32,7 +36,7 @@
     <!-- Links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">HOME</a>
+        <a class="nav-link" href="index.php">HOME</a>
       </li>
       <?php if (isset($_SESSION['username'])) : ?>
       <li class="nav-item">
@@ -91,7 +95,7 @@
               </div>
               <!-- footer -->
               <div class="modal-footer">
-                <button type="submit" name="reg_user" class="btn btn-primary btn-block" id="sign">SIGN UP</button>
+                <button type="submit" name="reg_user" class="btn btn-primary btn-block" id="signup">SIGN UP</button>
               </div>
           </form>
         </div>
@@ -113,19 +117,20 @@
         </div>
         <!-- body -->
         <div class="modal-body">
-          <form role="form">
+          <form role="form" action="index.php" method="post">
             <div class="form-group">
-              <input type="number" class="form-control" placeholder="Roll Number" />
-              <input type="password" class="form-control" placeholder="Password" />
+              <input type="number" name="username" class="form-control" placeholder="Roll Number" />
+              <input type="password" name="password" class="form-control" placeholder="Password" />
 
             </div>
-          </form>
-        </div>
+          
+        
         <!-- footer -->
         <div class="modal-footer">
-          <button class="btn btn-primary btn-block" id="sign">LOGIN</button>
+          <button type="submit" name="login_user" class="btn btn-primary btn-block" id="sign">LOGIN</button>
         </div>
-
+        </form>
+        </div>
       </div>
     </div>
   </div>

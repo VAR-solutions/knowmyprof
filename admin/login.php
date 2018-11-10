@@ -28,7 +28,7 @@ if (isset($_POST['login_user'])) {
         if (mysqli_num_rows($results) == 1) {
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "You are now logged in";
-            $_SESSION['ttt'] = "ok";
+            $_SESSION['admin'] = 1;
             header('location: index.php');
         } else {
             array_push($errors, "Wrong username/password combination");

@@ -13,13 +13,10 @@ $result = mysqli_query($db, "SELECT * FROM prof");
         <h1>List of professors</h1>
         <ul>
             <?php while ($row = mysqli_fetch_array($result)) :?>
-            <div><a href = "prof.php?id=<?php echo $row[id] ?> " >
-                    
-                        <li>
+            <div>
+                <a href = "prof.php?id=<?php echo $row[id] ?> " >
+                    <li>
                         <?php echo $row['fname'] . " ". $row['lname']; ?></li>
-                        <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" width="290" height="290">'; ?>
-                        
-                    
                 </a></div>
 
             <?php endwhile ;?>    

@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('serv.php');
 $db = mysqli_connect('localhost', 'itbois', 'password', 'it');
 if(!empty($_GET['q'])){
     $name = $_GET['q'];

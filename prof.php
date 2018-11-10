@@ -1,19 +1,42 @@
 <?php
-if (!empty($_GET['id'])) {
+    session_start();
+    include('serv.php');
+    $tt;
     $db = mysqli_connect('localhost', 'itbois', 'password', 'it');
+if(isset($_SESSION['username'])){
+        $username = $_SESSION['username'];
+        $rev_check = mysqli_query($db,"SELECT * FROM reviews WHERE username = {$_SESSION['username']} AND id = {$_GET['id']}");
+        $result = mysqli_query($db, "SELECT * FROM prof WHERE id = {$_GET['id']}");
+        $row = $result->fetch_assoc();
+        $result1 = mysqli_query($db,"SELECT * FROM reviews WHERE id = {$_GET['id']} AND username != '$username' ");
+        if($rev_check->num_rows >0){
+            $rev = $rev_check->fetch_assoc();
+            $tt = 1;
+        }else{
+            $tt = 0;
+        }
+}
+if (!empty($_GET['id']) && $tt == 0) {
     $result = mysqli_query($db, "SELECT * FROM prof WHERE id = {$_GET['id']}");
     $row = $result->fetch_assoc();
     $result1 = mysqli_query($db,"SELECT * FROM reviews WHERE id = {$_GET['id']}");
     // $reviw_row = $result1->fetch_assoc();
 }
 
-if(isset($_POST['n_review'])) {
+if(isset($_POST['n_review']) && $tt ==0) {
     $id = $_GET['id'];
-    $db = mysqli_connect('localhost', 'itbois', 'password', 'it');
+    $username = $_SESSION['username'];
     $review = mysqli_real_escape_string($db, $_POST['review']);
-    mysqli_query($db,"INSERT INTO reviews (id,review) VALUES ('$id','$review')");
+    mysqli_query($db,"INSERT INTO reviews (id,review,username) VALUES ('$id','$review','$username')");
     header("location: prof.php?id=".$id);
 }
+if(isset($_POST['editr'])){
+    $id = $_GET['id'];
+    $review = mysqli_real_escape_string($db, $_POST['review']);
+    mysqli_query($db,"UPDATE reviews SET review = '$review' WHERE id = {$_GET['id']} AND username = {$_SESSION['username']}");
+    header("location: prof.php?id=".$id);
+}
+
 ?>
 
 <?php include('templates/header.php') ?>
@@ -92,6 +115,23 @@ if(isset($_POST['n_review'])) {
 
     <div class="revi">
         <h2 id="heading">Reviews</h2>
+        <?php if($tt == 1 ) : ?>
+        <div class= "alt">
+                <p class = "reviewdata">
+                    <?php echo nl2br($rev['review']) ?>
+                    <i class="fa fa-pencil-square-o" data-toggle = "collapse" data-target="#editrev" ></i>
+                    <div class="area collapse" id="editrev">
+                    <form method="post" action="prof.php?id=<?php echo $row[id] ?>">
+                        <textarea  name="review" rows = "2" cols = "70" placeholder="Write a review.."><?php echo $rev['review'] ?></textarea>
+                        <br>
+                        <button name="editr" class="button"style="height:45px;width:200px ;padding:10px;font-size: 18px ;box-shadow: 7px 7px 40px grey"><span>Save Changes</span></button>
+
+                    </form>
+                </div>
+                </p>
+            </div>
+        <hr class = "seprate">            
+        <?php endif ; ?>
         <?php while ($row1 = mysqli_fetch_array($result1)) : ?>
             <div class= "alt" >
                 <p class = "reviewdata">
@@ -118,7 +158,15 @@ if(isset($_POST['n_review'])) {
         <form method="post" action="prof.php?id=<?php echo $row[id] ?>">
             <textarea id="review" name="review" rows = "2" cols = "70" placeholder="Write a review.."></textarea>
             <br>
-            <button class="button" type="submit" name="n_review" onclick="submit()" style="height:45px;width:200px ;padding:10px;font-size: 18px ;box-shadow: 7px 7px 40px grey"><span>Submit</span></button>
+            <button class="button"
+            <?php if(!$_SESSION['username']){
+                // echo "disabled";
+                $temp = 1;
+            }?> type="submit" name="n_review" onmouseover="<?php if($temp===1){
+                echo "ale()";
+            } ?>"
+            style="height:45px;width:200px ;padding:10px;font-size: 18px ;box-shadow: 7px 7px 40px grey"><span>Submit</span></button>
+            
         </form>
     </div>
     <br>
@@ -128,6 +176,10 @@ if(isset($_POST['n_review'])) {
    
    <br>  
   
-  
+  <script>
+      function ale(){
+          alert("You need to login first to review!!!");
+      }
+  </script>
   
 <?php include('templates/footer.php') ?>

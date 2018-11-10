@@ -10,7 +10,7 @@ $result = mysqli_query($db, "SELECT * FROM reviews");
         <title>KMP</title>
     </head>
     <body>
-        <h1>List of Users</h1>
+        <h1>List of Reviews</h1>
         <ul>
             <?php
                 while ($row = mysqli_fetch_array($result)) {

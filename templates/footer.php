@@ -1,7 +1,7 @@
 <footer>
-    <div class="footer-copyright text-left py-3" id = "footer">
+    <div class="footer-copyright text-left " id = "footer">
       <i class="far fa-copyright" style = "margin-left: 8px;"></i> 2018 Know My Professor
-      <a id = "git"href="https://github.com/VAR-solutions/knowmyprof"><span style = "float: right; margin-right: 8px;">View Source Code on:  <i class="fab fa-github"></i></span></a>
+      <a id = "git"href="https://github.com/VAR-solutions/knowmyprof"><span id="github" style = "float: right; margin-right: 8px;">View Source Code on:  <i class="fab fa-github"></i></span></a>
      </div>
 </footer>
 

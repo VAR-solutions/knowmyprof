@@ -25,7 +25,7 @@
 </head>
 
 
-<body>
+<body background="gradient_back.png">
 
   <nav class="navbar navbar-expand-sm sticky-top">
     <!-- Brand/logo -->

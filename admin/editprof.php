@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['username']) || !$_SESSION['admin'] ) {
+	$_SESSION['msg'] = "You must log in first";
+	header('location: login.php');
+}
 if (!empty($_GET['id'])) {
     $db = mysqli_connect('localhost', 'itbois', 'password', 'it');
     $result = mysqli_query($db, "SELECT * FROM prof WHERE id = {$_GET['id']}");
@@ -17,11 +23,17 @@ if(isset($_POST['edit'])){
   	$web = mysqli_real_escape_string($db,$_POST['web']);
   	$linkedin = mysqli_real_escape_string($db,$_POST['linkedin']);
 	$exp = mysqli_real_escape_string($db,$_POST['exp']);
-    mysqli_query($db,"UPDATE prof SET fname = '$fname', lname = '$lname', email = '$email',web = '$web',linkedin = '$linkedin' WHERE id=$id");
+    mysqli_query($db,"UPDATE prof SET fname = '$fname', lname = '$lname', email = '$email',web = '$web',linkedin = '$linkedin',aoi = '$aoi',pub = '$pub',qual = '$qual',exp = '$exp',achi = '$achi' WHERE id=$id");
     header('location: prof.php?id='.$id);
 }
 ?>
-
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>KMP</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body></body>
 
 <form method="post" action="editprof.php?id=<?php echo $row['id'] ?>" enctype="multipart/form-data">
   		<?php include('errors.php'); ?>
@@ -40,7 +52,7 @@ if(isset($_POST['edit'])){
     	</div>
     	<div class="input-group">
   			<label>Qualification</label>
-  			<textarea type="text" name="qual" value=""><?php echo $row['email']; ?></textarea>
+  			<textarea type="text" name="qual" value=""><?php echo $row['qual']; ?></textarea>
     	</div>
     	<div class="input-group">
   			<label>Area of interest</label>
@@ -74,3 +86,5 @@ if(isset($_POST['edit'])){
   			<button type="submit" class="btn" name="edit">Save Changes</button>
   		</div>
 		</form>
+</body>
+</html>

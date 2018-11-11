@@ -1,5 +1,10 @@
 <?php
+session_start();
 
+if (!isset($_SESSION['username']) || !$_SESSION['admin'] ) {
+	$_SESSION['msg'] = "You must log in first";
+	header('location: login.php');
+}
 // initializing variables
 // $username = "";
 $email    = "";
@@ -15,8 +20,8 @@ $errors = array();
 $db = mysqli_connect('localhost', 'root', 'password', 'it');
 
 if (isset($_POST['reg_user'])) {
-  $email = mysqli_real_escape_string($db, $_POST['email']);
-  $fname = mysqli_real_escape_string($db, $_POST['fname']);
+  $email = trim(mysqli_real_escape_string($db, $_POST['email']));
+  $fname = trim(mysqli_real_escape_string($db, $_POST['fname']));
 	$lname = mysqli_real_escape_string($db, $_POST['lname']);
 	$aoi = mysqli_real_escape_string($db,$_POST['aoi']);
   	$qual = mysqli_real_escape_string($db, $_POST['qual']);
@@ -70,23 +75,23 @@ if (isset($_POST['reg_user'])) {
     	</div>
     	<div class="input-group">
   			<label>Qualification</label>
-  			<textarea type="text" name="qual" value="<?php echo $qual; ?>"></textarea>
+  			<textarea type="text" name="qual" value=""><?php echo $qual; ?></textarea>
     	</div>
     	<div class="input-group">
   			<label>Area of interest</label>
-  			<textarea type="text" name="aoi" value="<?php echo $aoi; ?>"></textarea>
+  			<textarea type="text" name="aoi" value=""><?php echo $aoi; ?></textarea>
   		</div>    
     	<div class="input-group">
   			<label>Achivements</label>
-  			<textarea name="achi" value="<?php echo $achi; ?>"> </textarea>
+  			<textarea name="achi" value=""><?php echo $achi; ?></textarea>
 		</div>
 		<div class="input-group">
   			<label>Publications</label>
-  			<textarea name="pub" value="<?php echo $pub; ?>"> </textarea>
+  			<textarea name="pub" value=""><?php echo $pub; ?></textarea>
 		</div>
 		<div class="input-group">
   			<label>Past Experience</label>
-  			<textarea name="exp" value="<?php echo $exp; ?>"> </textarea>
+  			<textarea name="exp" value=""><?php echo $exp; ?></textarea>
 		</div>
 		<div class="input-group">
   			<label>Website</label>

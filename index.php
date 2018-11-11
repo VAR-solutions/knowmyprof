@@ -16,7 +16,7 @@
   
   
   
-<p style="font-family: 'Dancing Script', cursive; text-align: center; font-size: 30px; font-weight: 550; color:#4b4949 "><q>Good teachers know how to bring out the best in students.</q></p>
+<p style="font-family: 'Dancing Script', cursive; text-align: center; font-size: 30px; font-weight: 550; color:#4b4949 ;margin-bottom:20px;"><q>Good teachers know how to bring out the best in students.</q></p>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner row w-100 mx-auto">
     <div class="carousel-item col-md-3 active ">

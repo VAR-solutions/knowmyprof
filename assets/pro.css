@@ -140,6 +140,7 @@ li > a:hover:before {
 .carousel-inner{
   max-height: 500px;
   width: 10%;
+
 }
 
 
@@ -199,7 +200,7 @@ li > a:hover:before {
 .carousel-item{
   padding-left: 20px;
   padding-bottom: 40px;
-  padding-top: 15px;
+  padding-top: 25px;
   
 }
 .carousel-control-prev{
@@ -568,4 +569,20 @@ li{
   color: #296dd2;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
 
+.container-fluid{
+  padding-left: 28px;
+}
+.cen{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

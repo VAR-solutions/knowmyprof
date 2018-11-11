@@ -26,13 +26,13 @@ if (!empty($_GET['id']) && $tt == 0) {
 if(isset($_POST['n_review']) && $tt ==0) {
     $id = $_GET['id'];
     $username = $_SESSION['username'];
-    $review = mysqli_real_escape_string($db, $_POST['review']);
+    $review = trim(mysqli_real_escape_string($db, $_POST['review']));
     mysqli_query($db,"INSERT INTO reviews (id,review,username) VALUES ('$id','$review','$username')");
     header("location: prof.php?id=".$id);
 }
 if(isset($_POST['editr'])){
     $id = $_GET['id'];
-    $review = mysqli_real_escape_string($db, $_POST['review']);
+    $review = trim(mysqli_real_escape_string($db, $_POST['review']));
     mysqli_query($db,"UPDATE reviews SET review = '$review' WHERE id = {$_GET['id']} AND username = {$_SESSION['username']}");
     header("location: prof.php?id=".$id);
 }
@@ -42,12 +42,12 @@ if(isset($_POST['editr'])){
 <?php include('templates/header.php') ?>
 
 <div class = "container">
-    <div class = "row">
-        <div class = "col-md-4">
+    <div class="row">
+        <div class = "col-md-4 col-sm-1 col-xs-1">
         <img class = "dp" src="<?php echo 'data:image/jpeg;base64,' . base64_encode($row['image']) ?>" alt="Card image cap">
              
         </div>
-        <div class = "col-md-8 data">    
+        <div class = "col-md-8 col-sm-1 col-xs-1 data">    
         <div class = "name"><?php echo $row['fname'] . " " . $row['lname']; ?></div>
         <ul>
             <!-- <li style = "color: #296dd2">
@@ -88,7 +88,7 @@ if(isset($_POST['editr'])){
     </div>
     <hr class="part"> 
     <div class = "row">
-    <div class="col-md-4 inter">
+    <div class="col-md-4 col-sm-4 col-xs-4 inter">
         <div class = "head">
             Area Of Interest:
             <p class = "matter">
@@ -96,7 +96,7 @@ if(isset($_POST['editr'])){
             </p>
         </div>
     </div>
-    <div class="col-md-4 achievements">
+    <div class="col-md-4 col-sm-4 col-xs-4 achievements">
         <div class = "head">
             Achievements:
             <p class = "matter">
@@ -104,7 +104,7 @@ if(isset($_POST['editr'])){
             </p>
         </div>
     </div>
-    <div class="col-md-4 publi">
+    <div class="col-md-4 col-sm-4 col-xs-4 publi">
         <div class = "head">
             Publications:
             <p class =  "matter"><?php echo nl2br($row['pub']) ?></p>
@@ -124,7 +124,7 @@ if(isset($_POST['editr'])){
                     <form method="post" action="prof.php?id=<?php echo $row[id] ?>">
                         <textarea  name="review" rows = "2" cols = "70" placeholder="Write a review.."><?php echo $rev['review'] ?></textarea>
                         <br>
-                        <button name="editr" class="button"style="height:45px;width:200px ;padding:10px;font-size: 18px ;box-shadow: 7px 7px 40px grey"><span>Save Changes</span></button>
+                        <button name="editr" class="button" style="height:45px;width:200px ;padding:10px;font-size: 18px ;box-shadow: 7px 7px 40px grey"><span>Save Changes</span></button>
 
                     </form>
                 </div>
@@ -158,27 +158,44 @@ if(isset($_POST['editr'])){
         <form method="post" action="prof.php?id=<?php echo $row[id] ?>">
             <textarea id="review" name="review" rows = "2" cols = "70" placeholder="Write a review.."></textarea>
             <br>
-            <button class="button"
-            <?php if(!$_SESSION['username']){
+            <button class="button new-rev"
+            <?php 
+                if(!$_SESSION['username']){
                 // echo "disabled";
                 $temp = 1;
-            }?> type="submit" name="n_review" onmouseover="<?php if($temp===1){
+            }?> 
+            type="submit" name="n_review" 
+            onmouseover="<?php if($temp==1){
                 echo "ale()";
-            } ?>"
+                }if($tt ==1){
+                echo "al()";}?>"
+            onmouseout="<?php echo "er()" ;?>"    
             style="height:45px;width:200px ;padding:10px;font-size: 18px ;box-shadow: 7px 7px 40px grey"><span>Submit</span></button>
-            
+            <p><span id="erro"></span></p>
         </form>
     </div>
     <br>
     <br>
 </div>
+        
     
    
    <br>  
   
   <script>
       function ale(){
-          alert("You need to login first to review!!!");
+        //   alert("You need to login first to review!!!");
+        $('#erro').replaceWith("You need to login first to give review!!!");
+        $('.new-rev').prop('disabled',true);
+      }
+      function al(){
+        //   alert("You have already given review!!!");
+        $('#erro').replaceWith("You have already given review!!!<br>You can edit your review.");
+        $('.new-rev').prop('disabled',true);
+      }
+      function er(){
+        $('.new-rev').prop('disabled',false);
+          $('#erro').replaceWith("");
       }
   </script>
   

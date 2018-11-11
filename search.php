@@ -20,6 +20,7 @@ if(!empty($_GET['q'])){
   
     <p style="font-family: 'Dancing Script', cursive; text-align: center; font-size: 30px; font-weight: 550; color:#4b4949 "><q>Good teachers know how to bring out the best in students. 
     </q></p>
+    <?php if($result->num_rows >0) :?>
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner row w-100 mx-auto">
         <div class="carousel-item col-md-3 active ">
@@ -58,6 +59,10 @@ if(!empty($_GET['q'])){
           <span class="sr-only">Next</span>
         </a>
       </div>
+      <?php else : ?>
+      <!-- <h2 style="text-align:center">No result Found</h2> -->
+      <img src="noresult.png" class="cen" >
+    <?php endif ?>
       <div class="wrap-check">
       <div class="wrap">
       <div class="search">
@@ -70,5 +75,6 @@ if(!empty($_GET['q'])){
       </div>
     </div>
     </div>
+    
     </div>
     <?php include('templates/footer.php') ?>

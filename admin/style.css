@@ -66,3 +66,8 @@ form, .content {
   border: 1px solid #3c763d;
   margin-bottom: 20px;
 }
+
+textarea{
+  font-size:16px; 
+  padding:5px 10px;
+}

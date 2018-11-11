@@ -178,9 +178,9 @@ if(isset($_POST['editr'])){
     <br>
 </div>
         
-    
-   
-   <br>  
+    <br>
+    <br>
+    <br>  
   
   <script>
       function ale(){

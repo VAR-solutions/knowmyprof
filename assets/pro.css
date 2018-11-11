@@ -289,7 +289,7 @@ li > a:hover:before {
 }
 .container-fluid {
   width: 100%;
-  height: max-content;
+  height: 100%;
   margin-bottom: 94px;
 }
 
@@ -585,4 +585,12 @@ input[type=number]::-webkit-outer-spin-button {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+#footer{
+  position: fixed;
+  left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
 }

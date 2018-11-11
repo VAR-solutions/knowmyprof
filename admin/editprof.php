@@ -23,15 +23,25 @@ if(isset($_POST['edit'])){
   	$web = mysqli_real_escape_string($db,$_POST['web']);
   	$linkedin = mysqli_real_escape_string($db,$_POST['linkedin']);
 	$exp = mysqli_real_escape_string($db,$_POST['exp']);
-    mysqli_query($db,"UPDATE prof SET fname = '$fname', lname = '$lname', email = '$email',web = '$web',linkedin = '$linkedin',aoi = '$aoi',pub = '$pub',qual = '$qual',exp = '$exp',achi = '$achi' WHERE id=$id");
-    header('location: prof.php?id='.$id);
+	$check = getimagesize($_FILES['image']['tmp_name']);
+    if($check !== false){
+        $image = $_FILES['image']['tmp_name'];
+				$imgContent = addslashes(file_get_contents($image));
+				$ttt = true;
+			}
+				if (count($errors) == 0 && $ttt) {
+    mysqli_query($db,"UPDATE prof SET fname = '$fname', lname = '$lname', email = '$email',web = '$web',linkedin = '$linkedin',aoi = '$aoi',pub = '$pub',qual = '$qual',exp = '$exp',achi = '$achi',image='$imgContent' WHERE id=$id");
+	header('location: prof.php?id='.$id);
+				}
 }
 ?>
 <!DOCTYPE html>
 <html>
   <head>
       <title>KMP</title>
-      <link rel="stylesheet" type="text/css" href="style.css">
+	  <link rel="stylesheet" type="text/css" href="style.css">
+	  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	  
   </head>
   <body></body>
 
@@ -52,23 +62,23 @@ if(isset($_POST['edit'])){
     	</div>
     	<div class="input-group">
   			<label>Qualification</label>
-  			<textarea type="text" name="qual" value=""><?php echo $row['qual']; ?></textarea>
+  			<textarea rows="5" cols="36" type="text" name="qual" value=""><?php echo $row['qual']; ?></textarea>
     	</div>
     	<div class="input-group">
   			<label>Area of interest</label>
-  			<textarea type="text" name="aoi" value=""><?php echo $row['aoi']; ?></textarea>
+  			<textarea type="text" name="aoi"  rows="5" cols="36" value=""><?php echo $row['aoi']; ?></textarea>
   		</div>    
     	<div class="input-group">
   			<label>Achivements</label>
-  			<textarea name="achi" value=""><?php echo $row['achi']; ?></textarea>
+  			<textarea rows="5" cols="36"  name="achi" value=""><?php echo $row['achi']; ?></textarea>
 		</div>
-		<div class="input-group">
+		<div class="input-group"></div>
   			<label>Publications</label>
-  			<textarea name="pub" value=""><?php echo $row['pub']; ?></textarea>
+  			<textarea rows="5" cols="36"  name="pub" value=""><?php echo $row['pub']; ?></textarea>
 		</div>
-		<div class="input-group">
+		<div class="input-group"></div>
   			<label>Past Experience</label>
-  			<textarea name="exp" value=""><?php echo $row['exp']; ?></textarea>
+  			<textarea rows="5" cols="36"  name="exp" value=""><?php echo $row['exp']; ?></textarea>
 		</div>
 		<div class="input-group">
   			<label>Website</label>
@@ -80,11 +90,29 @@ if(isset($_POST['edit'])){
     	</div>
     	<div class="input-group">
   			<label>Display Picture</label>
-  			<input type="file" name="image" value="UPLOAD">
+  			<input type="file" name="image" onchange="readURL(this);" value="UPLOAD">
   		</div>  
+		<img id="blah" src="#" alt="your image" hidden />
     	<div class="input-group">
   			<button type="submit" class="btn" name="edit">Save Changes</button>
   		</div>
 		</form>
 </body>
+<script>
+		     function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result)
+                        .width(150)
+                        .height(150)
+						.attr('hidden',false);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+</script>
 </html>

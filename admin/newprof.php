@@ -54,7 +54,8 @@ if (isset($_POST['reg_user'])) {
 <html>
   <head>
       <title>KMP</title>
-      <link rel="stylesheet" type="text/css" href="style.css">
+	  <link rel="stylesheet" type="text/css" href="style.css">
+	  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   </head>
   <body>
 
@@ -63,35 +64,35 @@ if (isset($_POST['reg_user'])) {
   		
   		<div class="input-group">
 	  		<label>First Name</label>
-  			<input type="text" name="fname" value="<?php echo $fname; ?>">
+  			<input type="text" name="fname" value="<?php echo $fname; ?>" required>
   		</div>
     	<div class="input-group">
   			<label>Last Name</label>
-  			<input type="text" name="lname" value="<?php echo $lname; ?>">
+  			<input type="text" name="lname" value="<?php echo $lname; ?>" required>
   		</div>
   		<div class="input-group">
   			<label>Email</label>
-  			<input type="email" name="email" value="<?php echo $email; ?>">
+  			<input type="email" name="email" value="<?php echo $email; ?>" required>
     	</div>
     	<div class="input-group">
   			<label>Qualification</label>
-  			<textarea type="text" name="qual" value=""><?php echo $qual; ?></textarea>
+  			<textarea class="" rows="5" cols="36" type="text" name="qual" value="" required><?php echo $qual; ?></textarea>
     	</div>
     	<div class="input-group">
   			<label>Area of interest</label>
-  			<textarea type="text" name="aoi" value=""><?php echo $aoi; ?></textarea>
+  			<textarea type="text" name="aoi" rows="5" cols="36"  value="" required><?php echo $aoi; ?></textarea>
   		</div>    
     	<div class="input-group">
   			<label>Achivements</label>
-  			<textarea name="achi" value=""><?php echo $achi; ?></textarea>
+  			<textarea  rows="5" cols="36" name="achi" value="" required><?php echo $achi; ?></textarea>
 		</div>
 		<div class="input-group">
   			<label>Publications</label>
-  			<textarea name="pub" value=""><?php echo $pub; ?></textarea>
+  			<textarea  rows="5" cols="36"  name="pub" value="" required><?php echo $pub; ?></textarea>
 		</div>
 		<div class="input-group">
-  			<label>Past Experience</label>
-  			<textarea name="exp" value=""><?php echo $exp; ?></textarea>
+  			<label> Present & Past Experience</label>
+  			<textarea  rows="5" cols="36"  name="exp" value="" required><?php echo $exp; ?></textarea>
 		</div>
 		<div class="input-group">
   			<label>Website</label>
@@ -103,11 +104,29 @@ if (isset($_POST['reg_user'])) {
     	</div>
     	<div class="input-group">
   			<label>Display Picture</label>
-  			<input type="file" name="image" value="UPLOAD">
+  			<input type="file" name="image" onchange="readURL(this);" value="UPLOAD">
   		</div>  
-    	<div class="input-group">
+		<img id="blah" src="#" alt="your image" hidden />
+		<div class="input-group">
   			<button type="submit" class="btn" name="reg_user">Register</button>
   		</div>
 		</form>
 	</body>
+	<script>
+		     function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result)
+                        .width(150)
+                        .height(150)
+						.attr('hidden',false);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+	</script>
 </html>

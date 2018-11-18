@@ -362,7 +362,7 @@ table, th, td {
 .inter{
   text-align: center; 
   border-right:6px solid rgba(170, 168, 168);
-  height:250px;
+  /* height:250px; */
   
   /* display: block; */
   width: 2px;
@@ -370,7 +370,7 @@ table, th, td {
 .achievements{
   text-align: center;
   border-right:6px solid rgba(170, 168, 168);
-  height:250px;
+  /* height:250px; */
   
   /* display: block; */
   width: 2px;   
@@ -380,11 +380,12 @@ table, th, td {
 }
 .head{
   color: #296dd2;
+  overflow: auto;
   
 }
 .matter{
   color: black;
-  text-align: center;
+  text-align: left;
   margin-top: 20px;
 }
 .part{
@@ -427,7 +428,7 @@ li{
 }
 
 .fa-envelope{
-  margin-left: 35px;
+  margin-left: 15px;
   color: rgb(114, 113, 113);
 }
 .fa-linkedin{
@@ -443,6 +444,16 @@ li{
 }
 .cont:hover{
   color: black;
+}
+.mail>a{
+  color:  rgb(114, 113, 113);
+}
+.mail>a:active{
+  color:  rgb(114, 113, 113);
+}
+.mail>a:hover{
+  color: black;
+  text-decoration: none;
 }
 
 #heading{
@@ -593,4 +604,8 @@ input[type=number]::-webkit-outer-spin-button {
     width: 100%;
     background-color: #fff;
     text-align: center;
+}
+
+#emai{
+  margin: 0;
 }

@@ -25,14 +25,14 @@ if (!empty($_GET['id'])) {
             <?php foreach ($w as $qua) : ?>
                 <li style = ""><?php echo $qua; ?></li>
             <?php endforeach; ?>
-        </ul>    
-        <h3>Present & Past Work:-</h3>    
+        </ul>
+        <h3>Present & Past Works:-</h3>
         <ul>    
-            <?php $ww = preg_split('/$\R?^/m', $row['exp']); ?>
+            <?php $ww = preg_split('/$\R?^/m', $row['achi']); ?>
             <?php foreach ($ww as $ex) : ?>
                 <li><?php echo $ex; ?></li>
             <?php endforeach; ?>
-        </ul>
+        </ul>    
         <h3>Area of Interest:-</h3>
         <ul>    
             <?php $ww = preg_split('/$\R?^/m', $row['aoi']); ?>
@@ -40,13 +40,16 @@ if (!empty($_GET['id'])) {
                 <li><?php echo $ex; ?></li>
             <?php endforeach; ?>
         </ul>
-        <h3>Achivements:-</h3>
+        <h3>Teaches:-</h3>    
         <ul>    
-            <?php $ww = preg_split('/$\R?^/m', $row['achi']); ?>
+            <?php $ww = preg_split('/$\R?^/m', $row['exp']); ?>
             <?php foreach ($ww as $ex) : ?>
                 <li><?php echo $ex; ?></li>
             <?php endforeach; ?>
         </ul>
+        
+        
+        
         <h3>Publications:-</h3>
         <ul>    
             <?php $ww = preg_split('/$\R?^/m', $row['pub']); ?>
@@ -54,8 +57,8 @@ if (!empty($_GET['id'])) {
                 <li><?php echo $ex; ?></li>
             <?php endforeach; ?>
         </ul>
-        <span class = "cont" style="padding-right:10px; font-size:18px;"><i class="far fa-envelope cont "></i><?php echo $row['email'] ?></span>
-        <span class = "cont" style="padding-right:10px; font-size:18px;"><i class="fab fa-linkedin cont"></i><?php echo $row['linkedin'] ?></span>
+        <span class = "cont" style="padding-right:10px; font-size:18px;"><i class="far fa-envelope cont "></i><?php echo $row['email'] ?></span><br>
+        <span class = "cont" style="padding-right:10px; font-size:18px;"><i class="fab fa-linkedin cont"></i><?php echo $row['linkedin'] ?></span><br>
         <span class = "cont" style="padding-right:10px; font-size:18px;"><i class="fas fa-globe-americas cont"></i> <?php echo $row['web'] ?></span><br>
         <a href="editprof.php?id=<?php echo $row['id'] ?>">Edit Details</a>
     </div>

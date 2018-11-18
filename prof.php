@@ -62,10 +62,7 @@ if(isset($_POST['editr'])){
             <?php endforeach; ?>
             
             <br>
-            <?php $ww = preg_split('/$\R?^/m', $row['exp']); ?>
-            <?php foreach ($ww as $ex) : ?>
-                <li><?php echo $ex; ?></li>
-            <?php endforeach; ?>
+            
             <!-- <li >
                 Assistant Professor,IIT Kanpur (2017-present)
             </li>
@@ -80,9 +77,9 @@ if(isset($_POST['editr'])){
                 <a id="aaaa" href="#review"><i class="far fa-edit"></i>Add a Review
                 </a></div>
         <div class ="col-md-8 mail">
-               <span class = "cont"> <i class="far fa-envelope cont "></i>  <?php echo $row['email'] ?></span>
-               <span class = "cont"> <i class="fab fa-linkedin cont"></i> <?php echo $row['linkedin'] ?> </span>
-                <span class = "cont"><i class="fas fa-globe-americas cont"></i> <?php echo $row['web'] ?> </span>
+                <span class = "cont"> <i class="far fa-envelope cont "></i>  <?php echo $row['email'] ?></span>
+                <span class = "cont"> <i class="fab fa-linkedin cont"></i> <?php echo $row['linkedin'] ?> </span>
+                <a href=" <?php echo $row['web'] ?>"><span class = "cont"><i class="fas fa-globe-americas cont"></i>Website</span></a>
                     
         </div>
     </div>
@@ -90,24 +87,35 @@ if(isset($_POST['editr'])){
     <div class = "row">
     <div class="col-md-4 col-sm-4 col-xs-4 inter">
         <div class = "head">
-            Area Of Interest:
+            Area Of Interest
             <p class = "matter">
-               <?php echo nl2br($row['aoi']); ?>     
+            <?php $w = preg_split('/$\R?^/m', $row['aoi']); ?>
+            <?php foreach ($w as $qua) : ?>
+                <li style = "color: black;text-align:justify;"><?php echo $qua; ?></li>
+            <?php endforeach; ?>    
             </p>
         </div>
     </div>
     <div class="col-md-4 col-sm-4 col-xs-4 achievements">
         <div class = "head">
-            Achievements:
+            Past Experiences
             <p class = "matter">
-                <?php echo $row['achi'] ?>
+            <?php $w = preg_split('/$\R?^/m', $row['achi']); ?>
+            <?php foreach ($w as $qua) : ?>
+                <li style = "color: black; text-align:justify;"><?php echo $qua; ?></li>
+            <?php endforeach; ?>
             </p>
         </div>
     </div>
     <div class="col-md-4 col-sm-4 col-xs-4 publi">
         <div class = "head">
-            Publications:
-            <p class =  "matter"><?php echo nl2br($row['pub']) ?></p>
+            Publications
+            <p class = "matter">
+            <?php $w = preg_split('/$\R?^/m', $row['pub']); ?>
+            <?php foreach ($w as $qua) : ?>
+                <li style = "color: black; text-align:justify;"><?php echo $qua; ?></li>
+            <?php endforeach; ?>
+            </p>
         </div>
     </div>
     </div>
@@ -122,7 +130,7 @@ if(isset($_POST['editr'])){
                     <i class="fa fa-pencil-square-o" data-toggle = "collapse" data-target="#editrev" ></i>
                     <div class="area collapse" id="editrev">
                     <form method="post" action="prof.php?id=<?php echo $row[id] ?>">
-                        <textarea  name="review" rows = "2" cols = "70" placeholder="Write a review.."><?php echo $rev['review'] ?></textarea>
+                        <textarea  name="review" rows = "2" cols = "70" ><?php echo $rev['review'] ?></textarea>
                         <br>
                         <button name="editr" class="button" style="height:45px;width:200px ;padding:10px;font-size: 18px ;box-shadow: 7px 7px 40px grey"><span>Save Changes</span></button>
 

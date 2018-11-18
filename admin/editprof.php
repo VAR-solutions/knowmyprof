@@ -41,6 +41,16 @@ if(isset($_POST['edit'])){
       <title>KMP</title>
 	  <link rel="stylesheet" type="text/css" href="style.css">
 	  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	  <style>
+		  form, .content {
+  width: 30%;
+  margin: 0px auto;
+  padding: 20px;
+  border: 1px solid #B0C4DE;
+  background: white;
+  border-radius: 0px 0px 10px 10px;
+}
+	  </style>
 	  
   </head>
   <body></body>
@@ -69,7 +79,7 @@ if(isset($_POST['edit'])){
   			<textarea type="text" name="aoi"  rows="5" cols="36" value=""><?php echo $row['aoi']; ?></textarea>
   		</div>    
     	<div class="input-group">
-  			<label>Achivements</label>
+  			<label>Past Experiences</label>
   			<textarea rows="5" cols="36"  name="achi" value=""><?php echo $row['achi']; ?></textarea>
 		</div>
 		<div class="input-group"></div>
@@ -77,7 +87,7 @@ if(isset($_POST['edit'])){
   			<textarea rows="5" cols="36"  name="pub" value=""><?php echo $row['pub']; ?></textarea>
 		</div>
 		<div class="input-group"></div>
-  			<label>Past Experience</label>
+  			<label>Subjects</label>
   			<textarea rows="5" cols="36"  name="exp" value=""><?php echo $row['exp']; ?></textarea>
 		</div>
 		<div class="input-group">

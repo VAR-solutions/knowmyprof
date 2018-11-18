@@ -7,8 +7,9 @@
   include('serv.php');
   include('process.php');
   include('templates/header.php');
-  
+
 ?>
+
 
 <div class="container-fluid">
     
@@ -25,8 +26,8 @@
         <div class="card w-75.2 p-70">
         <img class="card-img-top img-fluid" src="<?php echo 'data:image/jpeg;base64,' . base64_encode($r['image']) ?>"> 
           <div class="card-body">
-            <h6 class="card-title"><span class="card-name">Name - </span><?php echo $r['fname'] . " " . $r['lname']; ?></h6>
-            <p class="card-text">About professor.</p>
+            <h6 class="card-title"><?php echo $r['fname'] . " " . $r['lname']; ?></h6>
+            <p class="card-text"><i class="far fa-envelope " id="emai"> </i> <?php echo $r['email'] ?></p>
             
           </div>
         </div></a>
@@ -37,8 +38,8 @@
         <div class="card w-75.2 p-70" >
         <img class="card-img-top img-fluid" src="<?php echo 'data:image/jpeg;base64,' . base64_encode($row['image']) ?>"> 
           <div class="card-body">
-            <h6 class="card-title"><span class="card-name">Name - </span><?php echo $row['fname'] . " " . $row['lname']; ?></li></h6>
-            <p class="card-text">About professor.</p>
+            <h6 class="card-title"><?php echo $row['fname'] . " " . $row['lname']; ?></li></h6>
+            <p class="card-text"><i class="far fa-envelope" id="emai"> </i> <?php echo $row['email'] ?></p>
             
           </div>
         </div></a>
@@ -55,14 +56,40 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.search input[type="text"]').on("keyup input", function(){
+        /* Get input value on change */
+        var inputVal = $(this).val();
+        var resultDropdown = $(this).siblings(".livesearch");
+        if(inputVal.length){
+            $.get("livesearch.php", {term: inputVal}).done(function(data){
+                // Display the returned data in browser
+                resultDropdown.html(data);
+            });
+        } else{
+            resultDropdown.empty();
+        }
+    });
+    
+    // Set search input value on click of result item
+    $(document).on("click", ".livesearch p", function(){
+        $(this).parents(".search").find('input[type="text"]').val($(this).text());
+        $(this).parent(".livesearch").empty();
+    });
+});
+</script> -->
+
   <div class="wrap-check">
   <div class="wrap">
   <div class="search">
       <form method="get" action="search.php" target="_blank">
-     <input type="text" class="searchTerm" placeholder="SEARCH HERE" name = "q" >      
+     <input type="text" class="searchTerm" placeholder="SEARCH HERE" name = "q" autocomplete="off">      
      <button type="submit" class="searchButton" >
        <i class="fa fa-search"></i>
     </button>
+    <div class="livesearch"></div>
     </form>
   </div>
 </div>

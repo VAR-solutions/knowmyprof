@@ -41,6 +41,16 @@ if (isset($_POST['login_user'])) {
     <head>
         <title>KMP</title>
         <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        form, .content {
+  width: 30%;
+  margin: 0px auto;
+  padding: 20px;
+  border: 1px solid #B0C4DE;
+  background: white;
+  border-radius: 0px 0px 10px 10px;
+}
+    </style>
     </head>
     <body>
         <form method="post" action="login.php">

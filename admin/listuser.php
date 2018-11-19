@@ -5,7 +5,11 @@ if (!isset($_SESSION['username']) || !$_SESSION['admin'] ) {
     $_SESSION['msg'] = "You must log in first";
     header('location: login.php');
 }
-$db = mysqli_connect('localhost', 'root', 'password', 'it');
+// $db = mysqli_connect('localhost', 'root', 'password', 'it');
+//database configuration
+require ('../config.php');
+
+
 $result = mysqli_query($db, "SELECT * FROM users");
 
 ?>

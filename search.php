@@ -1,9 +1,15 @@
 <?php
 session_start();
 include('serv.php');
-$db = mysqli_connect('localhost', 'itbois', 'password', 'it');
+// $db = mysqli_connect('localhost', 'itbois', 'password', 'it');
+//database configuration
+require ('config.php');
+
+
 if(!empty($_GET['q'])){
-    $name = $_GET['q'];
+    $s = $_GET['q'];
+    $arr = explode(' ', trim($s));
+    $name = $arr[0];
     // $res = mysqli_query($db,"SELECT * FROM prof WHERE First_Name LIKE '" . mysql_real_escape_string( $name ) . "%' OR Last_Name LIKE '" . mysql_real_escape_string( $name ) ."%'";
     $sql="SELECT * FROM prof WHERE fname LIKE '" . mysqli_real_escape_string($db, $name ) . "%' OR lname LIKE '" . mysqli_real_escape_string($db, $name ) ."%'";
     $result = mysqli_query($db,$sql);
@@ -67,18 +73,43 @@ if(!empty($_GET['q'])){
       <br>
       <br>
     <?php endif ?>
-      <div class="wrap-check">
-      <div class="wrap">
-      <div class="search">
-          <form method="get" action="search.php">
-         <input type="text" class="searchTerm" placeholder="SEARCH HERE" name = "q" value="<?php echo $_GET['q'] ?>" >      
-         <button type="submit" class="searchButton" >
-           <i class="fa fa-search"></i>
-        </button>
-        </form>
-      </div>
-    </div>
-    </div>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('.searchTerm').on("keyup input", function(){
+          /* Get input value on change */
+          var inputVal = $(this).val();
+          var resultDropdown = $(this).siblings(".livesearch");
+          if(inputVal.length){
+              $.get("livesearch.php", {term: inputVal}).done(function(data){
+                  // Display the returned data in browser
+                  resultDropdown.html(data);
+              });
+          } else{
+              resultDropdown.empty();
+          }
+      });
+      
+      // Set search input value on click of result item
+      $(document).on("click", ".livesearch p", function(){
+          $(this).parents(".search").find('.searchTerm').val($(this).text());
+          $(this).parent(".livesearch").empty();
+      });
+    });
+  </script>
+  <div class="wrap-check">
+  <div class="wrap">
+  <div class="search">
+      <form method="get" action="search.php" target="_blank">
+     <input type="text" class="searchTerm" placeholder="SEARCH HERE" name = "q" autocomplete="off">      
+     <button type="submit" class="searchButton" >
+       <i class="fa fa-search"></i>
+    </button>
+    <div class="livesearch"></div>
+    </form>
+    
+  </div>
+</div>
+</div>
     
     </div>
     <?php include('templates/footer.php') ?>

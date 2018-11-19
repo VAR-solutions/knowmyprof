@@ -6,7 +6,11 @@ if (!isset($_SESSION['username']) || !$_SESSION['admin'] ) {
     header('location: login.php');
 }
 if (!empty($_GET['id'])) {
-    $db = mysqli_connect('localhost', 'itbois', 'password', 'it');
+    // $db = mysqli_connect('localhost', 'itbois', 'password', 'it');
+    //database configuration
+require ('../config.php');
+
+
     $result = mysqli_query($db, "SELECT * FROM prof WHERE id = {$_GET['id']}");
     $row = $result->fetch_assoc();
 }

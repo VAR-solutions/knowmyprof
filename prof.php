@@ -2,7 +2,11 @@
     session_start();
     include('serv.php');
     $tt;
-    $db = mysqli_connect('localhost', 'itbois', 'password', 'it');
+    // $db = mysqli_connect('localhost', 'itbois', 'password', 'it');
+    //database configuration
+  require ('config.php');
+
+  
 if(isset($_SESSION['username'])){
         $username = $_SESSION['username'];
         $rev_check = mysqli_query($db,"SELECT * FROM reviews WHERE username = {$_SESSION['username']} AND id = {$_GET['id']}");

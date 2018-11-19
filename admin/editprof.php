@@ -5,13 +5,17 @@ if (!isset($_SESSION['username']) || !$_SESSION['admin'] ) {
 	$_SESSION['msg'] = "You must log in first";
 	header('location: login.php');
 }
+
+//database configuration
+require ('../config.php');
+
 if (!empty($_GET['id'])) {
-    $db = mysqli_connect('localhost', 'itbois', 'password', 'it');
+    // $db = mysqli_connect('localhost', 'itbois', 'password', 'it');
     $result = mysqli_query($db, "SELECT * FROM prof WHERE id = {$_GET['id']}");
     $row = $result->fetch_assoc();
 }
 if(isset($_POST['edit'])){
-    $db = mysqli_connect('localhost', 'itbois', 'password', 'it');
+    // $db = mysqli_connect('localhost', 'itbois', 'password', 'it');
     $id = $_GET['id'];
     $email = mysqli_real_escape_string($db, $_POST['email']);
   	$fname = mysqli_real_escape_string($db, $_POST['fname']);

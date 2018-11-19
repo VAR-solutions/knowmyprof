@@ -9,7 +9,11 @@ $lname = "";
 $errors = array();
 
 // connect to the database
-$db = mysqli_connect('localhost', 'root', 'password', 'it');
+// $db = mysqli_connect('localhost', 'root', 'password', 'it');
+//database configuration
+require('config.php');
+
+
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {

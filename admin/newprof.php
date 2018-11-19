@@ -17,7 +17,11 @@ $imgContent;
 $errors = array();
 
 // connect to the database
-$db = mysqli_connect('localhost', 'root', 'password', 'it');
+// $db = mysqli_connect('localhost', 'root', 'password', 'it');
+//database configuration
+require ('../config.php');
+
+
 
 if (isset($_POST['reg_user'])) {
   $email = trim(mysqli_real_escape_string($db, $_POST['email']));

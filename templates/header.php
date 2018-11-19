@@ -20,8 +20,10 @@
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/pro.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  
 </head>
 
 

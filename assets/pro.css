@@ -243,6 +243,29 @@ li > a:hover:before {
   padding-right: 30px; 
   
 }
+
+.livesearch{
+  position: absolute;
+  padding-top: 55px;
+  z-index: 999;
+  top: 100%;
+  width: inherit;
+}
+.livesearch p{
+  float: left;
+  margin: 0;
+  width: 100%;
+  padding: 5x;
+  padding-left: 50px;
+  padding-right: 50px;
+  background: rgba(247, 244, 244, 0.5);
+  border: none;
+  border-top: none;
+  cursor: pointer;
+}
+.livesearch p:hover{
+  background: rgba(170, 168, 168, 0.5);
+}
 .searchTerm:hover{
   box-shadow: 7px 7px 40px #296dd28f;
 

@@ -1,7 +1,9 @@
 <?php
   
   $errors = array();
-  $db = mysqli_connect('localhost', 'itbois', 'password', 'it');
+  //database configuration
+  require_once('config.php');
+  
   $result = mysqli_query($db, "SELECT * FROM prof");
 
   include('serv.php');
@@ -56,31 +58,29 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-    $('.search input[type="text"]').on("keyup input", function(){
-        /* Get input value on change */
-        var inputVal = $(this).val();
-        var resultDropdown = $(this).siblings(".livesearch");
-        if(inputVal.length){
-            $.get("livesearch.php", {term: inputVal}).done(function(data){
-                // Display the returned data in browser
-                resultDropdown.html(data);
-            });
-        } else{
-            resultDropdown.empty();
-        }
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.searchTerm').on("keyup input", function(){
+          /* Get input value on change */
+          var inputVal = $(this).val();
+          var resultDropdown = $(this).siblings(".livesearch");
+          if(inputVal.length){
+              $.get("livesearch.php", {term: inputVal}).done(function(data){
+                  // Display the returned data in browser
+                  resultDropdown.html(data);
+              });
+          } else{
+              resultDropdown.empty();
+          }
+      });
+      
+      // Set search input value on click of result item
+      $(document).on("click", ".livesearch p", function(){
+          $(this).parents(".search").find('.searchTerm').val($(this).text());
+          $(this).parent(".livesearch").empty();
+      });
     });
-    
-    // Set search input value on click of result item
-    $(document).on("click", ".livesearch p", function(){
-        $(this).parents(".search").find('input[type="text"]').val($(this).text());
-        $(this).parent(".livesearch").empty();
-    });
-});
-</script> -->
-
+  </script>
   <div class="wrap-check">
   <div class="wrap">
   <div class="search">
@@ -91,6 +91,7 @@ $(document).ready(function(){
     </button>
     <div class="livesearch"></div>
     </form>
+    
   </div>
 </div>
 </div>

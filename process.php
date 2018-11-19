@@ -1,5 +1,9 @@
 <?php 
-  $db = mysqli_connect('localhost', 'root', 'password', 'it');
+//   $db = mysqli_connect('localhost', 'root', 'password', 'it');
+//database configuration
+require ('config.php');
+
+
   if (isset($_POST['username_check'])) {
   	$username = $_POST['username'];
   	$sql = "SELECT * FROM users WHERE username='$username'";

@@ -40,9 +40,25 @@
       <li class="nav-item">
         <a class="nav-link" href="index.php">HOME</a>
       </li>
-      <?php if (isset($_SESSION['username'])) : ?>
+      <?php if (isset($_SESSION['username']) && $_SESSION['admin']!=1 ) : ?>
+      <li class="nav-item dropdown" id="dropdown-nav">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <?php
+            $user = mysqli_fetch_assoc(mysqli_query($db,"SELECT * FROM users WHERE username = $_SESSION[username]")); 
+            echo strtoupper($user[fname] . " " . $user[lname]);
+
+          ?>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" data-toggle="modal" data-target="#changepwd" href="">Change Password</a>
+          <!-- <a class="dropdown-item" href="#">Another action</a> -->
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="index.php?logout='1'">LOGOUT</a>
+        </div>
+      </li>
+      <?php elseif(isset($_SESSION['username']) && $_SESSION[admin] ==1  ): ?>
       <li class="nav-item">
-        <a class="nav-link" href="index.php?logout='1'">LOGOUT</a>
+        <a class="nav-link" href="admin">ADMIN</a>
       </li>
       <?php else : ?>
       <li class="nav-item">
@@ -121,7 +137,7 @@
         </div>
         <!-- body -->
         <div class="modal-body">
-        <?php  if (count($errors) > 0) : ?>
+        <?php  if (count($errors) > 0&& !$_SESSION['username']): ?>
         <p style="color:red;"><?php foreach ($errors as $error) : ?>
   	      <p><?php echo $error ?></p>
           <?php endforeach ?>
@@ -143,6 +159,49 @@
         <!-- footer -->
         <div class="modal-footer">
           <button type="submit" name="login_user" class="btn btn-primary btn-block" id="sign">LOGIN</button>
+        </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for change password -->
+  <div class="modal fade" id="changepwd">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- header -->
+        <div class="modal-header">
+          
+          </p>
+          <p class="modal-title">Change Password</p>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <!-- body -->
+        <div class="modal-body">
+        <?php  if (count($errors) > 0 && $_SESSION['username'] ): ?>
+        <p style="color:red;"><?php foreach ($errors as $error) : ?>
+  	      <p><?php echo $error ?></p>
+          <?php endforeach ?>
+          <?php echo '<script type="text/javascript">
+            $(window).on("load",function(){
+            $("#changepwd").modal("show");
+            });
+            </script>' ?>
+          <?php endif ?>  
+
+          <form role="form" action="index.php" method="post">
+            <div class="form-group">
+              <input type="password" name="oldpassword" class="form-control" placeholder="Old Password" required/>
+                <input id="password1" name="password_1" type="password" class="form-control" placeholder="Password" required />
+                <input id="password2" name="password_2" type="password" class="form-control" placeholder="Re-enter Password" required />
+            </div>
+          
+        
+        <!-- footer -->
+        <div class="modal-footer">
+          <button type="submit" name="changepwd" class="btn btn-primary btn-block" id="cpwd">Change Password</button>
         </div>
         </form>
         </div>

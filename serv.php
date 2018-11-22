@@ -80,5 +80,25 @@ if (isset($_POST['login_user'])) {
   }
 }
 
+// Change Password
+
+if (isset($_POST['changepwd'])) {
+  $oldpassword = mysqli_real_escape_string($db, $_POST['oldpassword']);
+  $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
+  $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
+  if ($password_1 != $password_2) {
+    array_push($errors, "The two passwords do not match");
+  }else{
+  $checkpwd = mysqli_fetch_assoc(mysqli_query($db,"SELECT password FROM users WHERE username = {$_SESSION['username']}"));
+  if ($checkpwd['password'] != md5($oldpassword)){
+    array_push($errors,$checkpwd);
+  }
+  if (count($errors) == 0) {
+    $password = md5($password_1);
+    mysqli_query($db,"UPDATE users SET password = '$password'");
+  	header("location: index.php");
+  }
+}
+}
 
 ?>

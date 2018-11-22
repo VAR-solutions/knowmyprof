@@ -7,6 +7,7 @@
 
 <head>
   <title>KMP</title>
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
   <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
@@ -194,8 +195,8 @@
           <form role="form" action="index.php" method="post">
             <div class="form-group">
               <input type="password" name="oldpassword" class="form-control" placeholder="Old Password" required/>
-                <input id="password1" name="password_1" type="password" class="form-control" placeholder="Password" required />
-                <input id="password2" name="password_2" type="password" class="form-control" placeholder="Re-enter Password" required />
+                <input name="password_1" type="password" class="form-control" placeholder="Password" required />
+                <input name="password_2" type="password" class="form-control" placeholder="Re-enter Password" required />
             </div>
           
         

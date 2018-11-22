@@ -17,7 +17,7 @@
 
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link href="panel.css" rel="stylesheet" type="text/css"> 
+<link href="assets/css/panel.css" rel="stylesheet" type="text/css"> 
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="row">
@@ -30,6 +30,7 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
         <div class="brand-wrapper">
+
             <!-- Hamburger -->
             <button type="button" class="navbar-toggle">
                 <span class="sr-only">Toggle navigation</span>
@@ -37,14 +38,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-
+            
             <!-- Brand -->
             <div class="brand-name-wrapper">
                 <a class="navbar-brand" href="../index.php">
-                    <img src="title.png" style="width:100%;">
+                    <img src="title.png" id="brand-img">
                 </a>
             </div>
-
             
         </div>
 
@@ -72,8 +72,3 @@
         <div class="side-body">
     
 
-        </div>
-    </div>
-</div>
-
-<script src="panel.js" ></script>

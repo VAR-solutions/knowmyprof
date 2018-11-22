@@ -44,32 +44,44 @@ if (isset($_POST['login_user'])) {
 <html>
     <head>
         <title>KMP</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    <style>
-        form, .content {
-  width: 30%;
-  margin: 0px auto;
-  padding: 20px;
-  border: 1px solid #B0C4DE;
-  background: white;
-  border-radius: 0px 0px 10px 10px;
-}
-    </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="assets/css/login.css">
     </head>
     <body>
-        <form method="post" action="login.php">
-  	<?php include('errors.php'); ?>
-  	<div class="input-group">
-  		<label>Username</label>
-  		<input type="text" name="username" >
-  	</div>
-  	<div class="input-group">
-  		<label>Password</label>
-  		<input type="password" name="password">
-  	</div>
-  	<div class="input-group">
-          <button type="submit" class="btn" name="login_user">Login</button>
-      </div>
-        </form>
+        <div class="container">
+            <div class="header col-xs-8">
+                <div class="brand-image">
+                    <a href="index.php">
+                        <img src="title.png" id="brand-img">
+                    </a>
+                </div>
+            </div>
+            <div class="admin col-xs-4">
+                    <p>|  ADMIN</p>
+            </div>
+            <div class="container-fluid col-xs-12">
+                <form method="post" action="login.php">
+                    <?php include('errors.php'); ?>
+                    <div class="group">
+                        <input type="text" name="username" placeholder="&nbsp;" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Username</label>
+                    </div>
+                    <div class="group">
+                        <input type="password" name="password" placeholder="&nbsp;" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Password</label>
+                    </div>
+                    <div class="input-group">
+                        <button type="submit" class="button" name="login_user"><span>Login</span></button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </body>
 </html>

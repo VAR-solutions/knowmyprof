@@ -9,7 +9,7 @@ html, body{
     height: 100%;
 }
 .header{
-    margin-top: 8%;
+    margin-top: 7%;
     margin-bottom: 10px;
 }
 .brand-image{
@@ -26,7 +26,7 @@ html, body{
     margin-top: 8%;
     margin-bottom: 10px;
     padding-left: 1%;
-    padding-top: 4%;
+    padding-top: 3%;
     text-transform: capitalize;
     letter-spacing: 5px;
     font-weight: 300;
@@ -45,11 +45,39 @@ html, body{
     background-color: rgb(81, 145, 241);
     border: none;
     color: white;
-    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
+    padding: 15px;
+    width: 120px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
 }
 /* form starting stylings ------------------------------- */
 .group{

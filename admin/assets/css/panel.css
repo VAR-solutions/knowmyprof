@@ -154,9 +154,27 @@
     padding: 15px 18px;
   }
   .brand-name-wrapper{
-      height: 100px;
+      height: 75px;
       
   }
+  #brand-img {
+    /* width: 100%; */
+    height: 80px;
+    display: block;
+  }
+.brand-wrapper{
+  height: 50px;
+}
+
+.navbar-brand{
+  height: 80px;
+}
+.navbar-brand>img{
+  height: 80px;
+  /* padding:15px; */
+  width: auto;
+}
+
   /* Main body section */
   .side-body {
     margin-left: 310px;
@@ -329,7 +347,7 @@
     /* Hamburger */
     .navbar-toggle {
       border: 0;
-      float: left;
+      float: right;
       padding: 18px;
       margin: 0;
       border-radius: 0;

@@ -81,7 +81,7 @@ if(isset($_POST['editr'])){
                 <a id="aaaa" href="#review"><i class="far fa-edit"></i>Add a Review
                 </a></div>
         <div class ="col-md-8 mail">
-                <span class = "cont"> <i class="far fa-envelope cont "></i>  <?php echo $row['email'] ?></span>
+                <a href="mailto:<?php echo $row['email'] ?>"><span class = "cont"> <i class="far fa-envelope cont "></i>  <?php echo $row['email'] ?></span></a>
                 <span class = "cont"> <i class="fab fa-linkedin cont"></i> <?php echo $row['linkedin'] ?> </span>
                 <a href=" <?php echo $row['web'] ?>"><span class = "cont"><i class="fas fa-globe-americas cont"></i>Website</span></a>
                     

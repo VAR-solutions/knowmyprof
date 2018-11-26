@@ -138,7 +138,7 @@
         </div>
         <!-- body -->
         <div class="modal-body">
-        <?php  if (count($errors) > 0&& !$_SESSION['username']): ?>
+        <?php  if (count($errors) > 0&& $errl == 1 ): ?>
         <p style="color:red;"><?php foreach ($errors as $error) : ?>
   	      <p><?php echo $error ?></p>
           <?php endforeach ?>
@@ -151,15 +151,16 @@
 
           <form role="form" action="index.php" method="post">
             <div class="form-group">
-              <input type="number" name="username" class="form-control" placeholder="Roll Number" />
-              <input type="password" name="password" class="form-control" placeholder="Password" />
+            <input type="number" name="username" class="form-control" placeholder="Roll Number" required/>
+            <input type="password" name="password" class="form-control" placeholder="Password" />
 
             </div>
           
         
         <!-- footer -->
         <div class="modal-footer">
-          <button type="submit" name="login_user" class="btn btn-primary btn-block" id="sign">LOGIN</button>
+          <button type="submit" name="login_user" class="btn btn-primary btn-block" id="sign">Login</button><br>
+          <button type="submit" name="forget_pwd" class="btn btn-primary btn-block" id="forgt" >Forget Password</button>
         </div>
         </form>
         </div>
@@ -181,7 +182,7 @@
         </div>
         <!-- body -->
         <div class="modal-body">
-        <?php  if (count($errors) > 0 && $_SESSION['username'] ): ?>
+        <?php  if ((count($errors) > 0 && $_SESSION['username'] ) || $_SESSION['forget_cpwd'] ==1 ): ?>
         <p style="color:red;"><?php foreach ($errors as $error) : ?>
   	      <p><?php echo $error ?></p>
           <?php endforeach ?>
@@ -194,7 +195,7 @@
 
           <form role="form" action="index.php" method="post">
             <div class="form-group">
-              <input type="password" name="oldpassword" class="form-control" placeholder="Old Password" required/>
+              <input type="password" name="oldpassword" class="form-control" placeholder="Current Password" <?php if($_SESSION['forget_cpwd'] == 1){echo "hidden";}else{echo "required";} ?>/>
                 <input name="password_1" type="password" class="form-control" placeholder="Password" required />
                 <input name="password_2" type="password" class="form-control" placeholder="Re-enter Password" required />
             </div>
@@ -209,3 +210,53 @@
       </div>
     </div>
   </div>
+
+  <!-- modal for verify account -->
+
+
+
+    <div class="modal fade" id="veri">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- header -->
+        <div class="modal-header">
+          
+          </p>
+          <p class="modal-title">Verify Account</p>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <!-- body -->
+        <div class="modal-body">
+          <p>Enter the 6- digit verification code sent to your email</p>
+        <?php  if ($err == 1): ?>
+        <p style="color:red;"><?php foreach ($errors as $error) : ?>
+  	      <p><?php echo $error ?></p>
+          <?php endforeach ?>
+          
+        <?php endif ?>  
+
+          <form role="form" action="index.php" method="post">
+            <div class="form-group">
+              <input type="number" name="veri" class="form-control" placeholder="Verification Code" required/>
+            </div>
+          
+        
+        <!-- footer -->
+        <div class="modal-footer">
+          <button type="submit" name="check_veri" class="btn btn-primary btn-block" id="">Verify</button>
+        </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <?php if($_SESSION['verific'] == 1): ?>
+  <?php echo '<script type="text/javascript">
+            $(window).on("load",function(){
+            $("#veri").modal("show");
+            });
+            </script>' ?>
+  <?php endif ?>

@@ -1,0 +1,172 @@
+/* The main content */
+
+.main-content {
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    margin-left: 20%;
+}
+
+.container{
+    width: 100%;
+    background: white;
+    height: 100%;
+}
+
+.row {
+    margin: 2%;
+}
+.headertitle p{
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 5px;
+    font-weight: 300;
+    font-size: 6vw;
+    font-family: 'Poiret One';
+    color: #757575;
+}
+
+/* .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+} */
+
+.headertitle hr {
+    align-content: center;
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+#hrule {
+    margin-top: 5px;
+    align-content: center;
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+
+.thumbnail {
+    margin: 2% 10% 8% 10%;
+    width: 300px;
+    height: 150px;
+    text-align: center;
+    text-emphasis: none;
+    letter-spacing: 2px;
+    font-size: 40px;
+    font-family: Merienda;
+}
+
+.thumbnail :hover{
+    text-decoration: none;
+}
+
+/* professor details admin */
+
+#prfname{
+    margin: 0;
+    text-align: left;
+    text-transform: capitalize;
+    letter-spacing: 8px;
+    font-weight: 700;
+    font-size: 5vw;
+    font-family: 'Poiret One';
+    color: #757575;
+}
+#prlname{
+    margin: 0;
+    text-align: left;
+    text-transform: capitalize;
+    letter-spacing: 4px;
+    font-weight: 300;
+    font-size: 3vw;
+    font-family: 'Poiret One';
+    color: #757575;
+}
+#editbtn{
+    float: right;
+    margin: 0;
+    color: white;
+    background-color: rgb(81, 145, 241);
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 4px;
+    font-weight: 300;
+    font-size: 2vw;
+    font-family: 'Monospace';
+}
+
+#editbtn:hover{
+    zoom: 1.02;
+}
+
+#primg{
+    margin: 0;
+    float: right;
+    display: block;
+    max-width: 100%;
+    height: 180px;
+    border: 1px solid black;
+}
+
+.detailtitle {
+    margin: 0;
+    margin-left: 3%;
+    text-align: left;
+    text-transform: capitalize;
+    letter-spacing: 4px;
+    font-weight: 700;
+    font-size: 25px;
+    font-family: 'Proza Libre';
+    color: #757575;
+}
+
+.detaillist{
+    margin: 0;
+    margin-left: 8%;
+    padding-bottom: 1%;
+    letter-spacing: 2px;
+    font-weight: 300;
+    font-size: 20px;
+    font-family: 'Quicksand';
+    color: #757575;
+}
+
+.input-group .form-control{
+    width: 50%;
+}
+
+@media (max-width: 900px) {
+
+    .main-content {
+        max-width: none;
+        padding: 40px 20px;
+		margin: 0 0 40px;
+    }
+
+    img#primg{
+        width: 100%;
+        height: 150px;
+    }
+}
+
+
+.container-fluid{
+    padding-top: 4%;
+    padding-left: 38%;
+    width: 100%;
+    font-family: Avenir;
+    box-sizing: border-box;
+    color: rgb(81, 145, 241);
+}
+.button {
+    background-color: rgb(81, 145, 241);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+

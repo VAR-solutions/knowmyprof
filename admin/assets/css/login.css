@@ -9,7 +9,7 @@ html, body{
     height: 100%;
 }
 .header{
-    margin-top: 7%;
+    margin-top: 5%;
     margin-bottom: 10px;
 }
 .brand-image{
@@ -23,7 +23,7 @@ html, body{
     display: block;
 }
 .admin{
-    margin-top: 8%;
+    margin-top: 6%;
     margin-bottom: 10px;
     padding-left: 1%;
     padding-top: 3%;
@@ -55,6 +55,12 @@ html, body{
     cursor: pointer;
     margin: 5px;
 }
+
+/* .error p{
+    color: red;
+    font-family: monospace;
+} */
+
 .button span {
     cursor: pointer;
     display: inline-block;

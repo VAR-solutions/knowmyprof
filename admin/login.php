@@ -35,7 +35,7 @@ if (isset($_POST['login_user'])) {
             $_SESSION['admin'] = 1;
             header('location: index.php');
         } else {
-            array_push($errors, "Wrong username/password combination");
+            array_push($errors, "Invalid Username OR Password");
         }
     }
 }
@@ -43,9 +43,9 @@ if (isset($_POST['login_user'])) {
 
 <html>
     <head>
-        <title>KMP</title>
+        <title>LOGIN | Know My Professor | ADMIN</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet"
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="assets/css/login.css">
@@ -64,7 +64,6 @@ if (isset($_POST['login_user'])) {
             </div>
             <div class="container-fluid col-xs-12">
                 <form method="post" action="login.php">
-                    <?php include('errors.php'); ?>
                     <div class="group">
                         <input type="text" name="username" placeholder="&nbsp;" required>
                         <span class="highlight"></span>
@@ -77,6 +76,7 @@ if (isset($_POST['login_user'])) {
                         <span class="bar"></span>
                         <label>Password</label>
                     </div>
+                    <?php include('errors.php'); ?>
                     <div class="input-group">
                         <button type="submit" class="button" name="login_user"><span>Login</span></button>
                     </div>

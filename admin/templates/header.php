@@ -10,65 +10,66 @@
   	unset($_SESSION['username']);
   	header("location: login.php");
   }
+  require ('../config.php');
+
 ?>
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Know My Professor | ADMIN</title>
 
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link href="assets/css/panel.css" rel="stylesheet" type="text/css"> 
-<!------ Include the above in your HEAD tag ---------->
+<link rel="stylesheet" type="text/css" href="assets/css/panel.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<link href='http://fonts.googleapis.com/css?family=Cookie|Merienda|Poiret+One|Quicksand|Proza+Libre|Regular' rel='stylesheet' type='text/css'>
+<link href="assets/css/style.css" rel="stylesheet" type="text/css">
 
-<div class="row">
-    <!-- uncomment code for absolute positioning tweek see top comment in css -->
-    <!-- <div class="absolute-wrapper"> </div> -->
-    <!-- Menu -->
-    <div class="side-menu">
-    
-    <nav class="navbar navbar-default" role="navigation">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-        <div class="brand-wrapper">
+</head>
 
-            <!-- Hamburger -->
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            
-            <!-- Brand -->
-            <div class="brand-name-wrapper">
-                <a class="navbar-brand" href="../index.php">
-                    <img src="title.png" id="brand-img">
-                </a>
+<body>
+    <div class="panel">
+        <aside class="sidebar-left">
+
+            <a class="company-logo" href="index.php">
+                <img class="logo-img" src="title.png">
+            </a>
+
+            <div class="sidebar-links">
+                <a class="" href="newprof.php">
+                <i class="fas fa-plus"></i>
+                Add Professor</a>
+                <a class="" href="listprof.php">
+                <i class="fas fa-chalkboard-teacher"></i>
+                Professors</a>
+                <a class="" href="listuser.php">
+                <i class="fas fa-users"></i>
+                Users</a>
+                <a class="" href="reviews.php">
+                <i class="far fa-edit"></i>
+                Reviews</a>
+                <a class="" href="../index.php">
+                <i class="fas fa-sign-out-alt"></i>    
+                View Site</a>
+                <a class="" href="index.php?logout='1'">
+                <i class="fas fa-sign-out-alt"></i>    
+                LOGOUT</a>
             </div>
-            
-        </div>
+        
+        </aside>
 
-    </div>
-
-    <!-- Main Menu -->
-    <div class="side-menu-container">
-        <ul class="nav navbar-nav">
-
-            <li><a href="newprof.php">Add Professor</a></li>
-            
-            <li><a href="listprof.php">List of Professor</a></li>
-
-            <li><a href="listuser.php">Users</a></li>
-            <li><a href="reviews.php">Reviews</a></li>
-            <li><a href="index.php?logout='1'">LOGOUT</a></li>
-        </ul>
-    </div><!-- /.navbar-collapse -->
-</nav>
-    
     </div>
 
     <!-- Main Content -->
-    <div class="container-fluid">
-        <div class="side-body">
-    
-
+    <div class="main-content">
+ 
+  

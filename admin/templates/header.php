@@ -47,7 +47,7 @@
 
             <div class="sidebar-links">
                 <a class="" href="newprof.php">
-                <i class="fas fa-plus"></i>
+                <ion-icon name="person-add" style="font-size:43.75px;"></ion-icon><br>
                 Add Professor</a>
                 <a class="" href="listprof.php">
                 <i class="fas fa-chalkboard-teacher"></i>

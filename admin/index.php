@@ -12,7 +12,7 @@
             <div class="col-lg-6 col-md-6 com-sm-12">
                 <div class="thumbnail">
                     <a class="" href="newprof.php">
-                    <i class="fas fa-plus"></i>
+                    <ion-icon name="person-add" style="font-size:52px ;padding:0 ; "></ion-icon>
                     <i class="_3-8_ img sp_cf1cK0AjlxV sx_9abba2"></i>
                     Add Professor</a>
                 </div>
@@ -40,5 +40,4 @@
             </div>
         </div>
     </div>
-
 <?php include('templates/footer.php') ?>

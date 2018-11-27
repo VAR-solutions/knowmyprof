@@ -65,7 +65,8 @@ if (isset($_POST['reg_user'])) {
   	mysqli_query($db, $query);
   	$_SESSION['tempusername'] = $username;
     $_SESSION['success'] = "You are now logged in";
-    $_SESSION['verific'] = 1;  
+    $_SESSION['verific'] = 1;
+    $_SESSION['signup'] = 1;  
   	header('location: index.php');
     }
   }else{
@@ -164,7 +165,11 @@ if(isset($_POST['check_veri'])){
   if($code == $_SESSION['verifycode']){
       mysqli_query($db,"UPDATE users set verifi = 1 where username = {$_SESSION['tempusername']}");
       $_SESSION['verific'] = null;
+      if($_SESSION['signup']==1){
+        $_SESSION['forget_cpwd'] = null;
+      }else{
       $_SESSION['forget_cpwd'] = 1;
+    }
       $_SESSION['username'] = $_SESSION['tempusername'];
       header('location: index.php');
   }

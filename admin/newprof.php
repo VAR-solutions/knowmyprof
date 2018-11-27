@@ -157,7 +157,7 @@ if (isset($_POST['reg_user'])) {
                         <input type="url" name="web" placeholder="http://www.example.com" class="form-control" value="<?php echo $web; ?>" aria-describedby="sizing-addon2">
                     </div>
                     <div class="input-group detaillist">
-                        <span class="input-group-addon" id="sizing-addon2">Email</span>
+                        <span class="input-group-addon" id="sizing-addon2">Linkedin</span>
                         <input name="linkedin" placeholder="http://www.linkedin.com/username" class="form-control" value="<?php echo $linkedin; ?>" aria-describedby="sizing-addon2">
                     </div>
                 </div>

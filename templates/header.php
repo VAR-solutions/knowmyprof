@@ -160,7 +160,7 @@
         <!-- footer -->
         <div class="modal-footer">
           <button type="submit" name="login_user" class="btn btn-primary btn-block" id="sign">Login</button><br>
-          <button type="submit" name="forget_pwd" class="btn btn-primary btn-block" id="forgt" >Forget Password</button>
+          <button type="submit" name="forget_pwd" class="btn btn-primary btn-block" id="forgt" >Forgot Password ?</button>
         </div>
         </form>
         </div>

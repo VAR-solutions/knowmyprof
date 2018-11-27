@@ -12,6 +12,9 @@
 
 ?>
 
+<script>
+	document.title = "Know My Professor | HOME";
+</script>
 
 <div class="container-fluid">
     

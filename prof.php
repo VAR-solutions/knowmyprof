@@ -45,6 +45,10 @@ if(isset($_POST['editr'])){
 
 <?php include('templates/header.php') ?>
 
+<script>
+	    document.title = "<?php echo $row['fname'] . " " . $row['lname']; ?> | Know My Professor";
+    </script>
+
 <div class = "container">
     <div class="row">
         <div class = "col-md-4 col-sm-1 col-xs-1">

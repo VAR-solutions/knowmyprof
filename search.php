@@ -17,6 +17,9 @@ if(!empty($_GET['q'])){
 ?>
 <?php include('templates/header.php') ?>
 
+<script>
+	    document.title = "Search Results | Know My Professor";
+    </script>
 
 <div class="container-fluid">
     

@@ -48,7 +48,7 @@
 	margin-bottom: 5px;
 }
 
-.sidebar-left .sidebar-links a.selected{
+.selected{
 	background-color: #ffffff;
 	color:  #7c8085;
 	font-size: 12px;

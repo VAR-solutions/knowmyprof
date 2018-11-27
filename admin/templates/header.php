@@ -23,6 +23,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>Know My Professor | ADMIN</title>
+	<link rel="shortcut icon" type="image/png" href="../favicon.png"/>
 
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>

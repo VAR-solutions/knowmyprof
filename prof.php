@@ -81,7 +81,7 @@ if(isset($_POST['editr'])){
                 <a id="aaaa" href="#review"><i class="far fa-edit"></i>Add a Review
                 </a></div>
         <div class ="col-md-8 mail">
-                <span class = "cont"> <i class="far fa-envelope cont "></i>  <?php echo $row['email'] ?></span>
+                <a href="mailto:<?php echo $row['email'] ?>"><span class = "cont"> <i class="far fa-envelope cont "></i>  <?php echo $row['email'] ?></span></a>
                 <span class = "cont"> <i class="fab fa-linkedin cont"></i> <?php echo $row['linkedin'] ?> </span>
                 <a href=" <?php echo $row['web'] ?>"><span class = "cont"><i class="fas fa-globe-americas cont"></i>Website</span></a>
                     
@@ -130,8 +130,8 @@ if(isset($_POST['editr'])){
         <?php if($tt == 1 ) : ?>
         <div class= "alt">
                 <p class = "reviewdata">
+                <i class="fa fa-pencil-square-o" data-toggle = "collapse" data-target="#editrev" title="Edit your Review" ></i>
                     <?php echo nl2br($rev['review']) ?>
-                    <i class="fa fa-pencil-square-o" data-toggle = "collapse" data-target="#editrev" ></i>
                     <div class="area collapse" id="editrev">
                     <form method="post" action="prof.php?id=<?php echo $row[id] ?>">
                         <textarea  name="review" rows = "2" cols = "70" ><?php echo $rev['review'] ?></textarea>
@@ -152,19 +152,7 @@ if(isset($_POST['editr'])){
             </div>
         <hr class = "seprate">            
         <?php endwhile ; ?>
-        <!-- <div class= "alt" ><p class = "reviewdata">
-            <q>Kaise kaiso ko diya hai ,aise waiso ko diya Mujhko bhi to lift kara de
-            Thodi si to lift kara de</q> </p></div>
-        <hr class = "seprate">
-        <div class= "alt" ><p class = "reviewdata">
-                Kaise kaiso ko diya hai ,aise waiso ko diya Mujhko bhi to lift kara de
-                Thodi si to lift kara de jdwbjdjwhjd 
-             whfrkefk 
-            f3kfnk jl </p></div>
-        <hr class = "seprate">
-        <div class= "alt" ><p class = "reviewdata">
-             Kaise kaiso ko diya hai ,aise waiso ko diya Mujhko bhi to lift kara de
-             Thodi si to lift kara de </p></div> -->
+        
     </div>
     <div class="area">
         <form method="post" action="prof.php?id=<?php echo $row[id] ?>">

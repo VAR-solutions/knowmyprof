@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 	`password` VARCHAR(100) NOT NULL,
 	`fname` VARCHAR(100) NOT NULL,
 	`lname` VARCHAR(100) NOT NULL,
+  `verifi` INT(1) NOT NULL,
 	PRIMARY KEY(`id`)	
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -23,7 +24,7 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `fname`, `lname`) VA
 -- PROF TABLE
 
 CREATE TABLE IF NOT EXISTS `prof` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `fname` varchar(100) NOT NULL,
   `lname` varchar(100) NOT NULL,
   `aoi` varchar(1000) NOT NULL,

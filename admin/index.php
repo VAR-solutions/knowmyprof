@@ -12,9 +12,9 @@
             <div class="col-lg-6 col-md-6 com-sm-12">
                 <div class="thumbnail">
                     <a class="" href="newprof.php">
-                    <i class="fas fa-plus"></i>
+                    <ion-icon name="person-add" style="font-size:52px ;padding:0 ; "></ion-icon><br>
                     <i class="_3-8_ img sp_cf1cK0AjlxV sx_9abba2"></i>
-                    Add Professor</a>
+                    <p style="font-size:38px;">Add Professor</p></a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 com-sm-12">
@@ -27,18 +27,17 @@
             <div class="col-lg-6 col-md-6 com-sm-12">
                 <div class="thumbnail">
                     <a class="" href="listuser.php">
-                    <i class="fas fa-users"></i>
+                    <i class="fas fa-users"></i><br>
                     Users</a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 com-sm-12">
                 <div class="thumbnail">
                     <a class="" href="reviews.php">
-                    <i class="far fa-edit"></i>
+                    <i class="far fa-edit"></i><br>
                     Reviews</a>
                 </div>
             </div>
         </div>
     </div>
-
 <?php include('templates/footer.php') ?>

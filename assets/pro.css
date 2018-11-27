@@ -116,26 +116,12 @@ li > a:hover:before {
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
-/* .container{
-  float: none;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 80%;
-  
-} */
 
 
 .img-fluid{
-  
-  
-   /* border-radius: 10px; */
-  /* border-bottom-left-radius: 40%;
-  border-bottom-right-radius: 40%;  */
+
   height: 232px;
   border-radius: 30px;
-  
-  
-
 }
 .carousel-inner{
   max-height: 500px;
@@ -181,7 +167,6 @@ li > a:hover:before {
 }
 .arrborder{ 
   color: #296dd2;
-  /* margin-top: 10%; */
 } 
 .arrborder:hover{
   color: #296dd2;
@@ -244,14 +229,11 @@ li > a:hover:before {
   
 }
 
-.livesearch{
-  position: absolute;
-  padding-top: 55px;
-  z-index: 999;
-  top: 100%;
+#livesearch{
   width: inherit;
 }
-.livesearch p{
+
+#livesearch option{
   float: left;
   margin: 0;
   width: 100%;
@@ -263,8 +245,8 @@ li > a:hover:before {
   border-top: none;
   cursor: pointer;
 }
-.livesearch p:hover{
-  background: rgba(170, 168, 168, 0.5);
+#livesearch option:hover{
+  background: rgba(247, 244, 244, 0.5);
 }
 .searchTerm:hover{
   box-shadow: 7px 7px 40px #296dd28f;

@@ -3,7 +3,7 @@ require('config.php');
 
 if(isset($_REQUEST["term"])){
     $key = $_GET['term'];
-    $sql = "SELECT * FROM prof WHERE (fname LIKE '%{$key}%') OR (lname LIKE '%{$key}%') OR (email LIKE '%{$key}%') OR (web LIKE '%{$key}%') OR (aoi LIKE '%{$key}%') OR (qual LIKE '%{$key}%') OR (achi LIKE '%{$key}%')";
+    $sql = "SELECT * FROM prof WHERE (fname LIKE '%{$key}%') OR (lname LIKE '%{$key}%') OR (email LIKE '%{$key}%') OR (web LIKE '%{$key}%') OR (aoi LIKE '%{$key}%')";
     
     if($stmt = mysqli_prepare($db, $sql)){
         // Bind variables to the prepared statement as parameters
@@ -19,10 +19,10 @@ if(isset($_REQUEST["term"])){
             // Check number of rows in the result set
             if(mysqli_num_rows($result) > 0){
                 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                    echo "<p>" . $row["fname"] . " " . $row["lname"] . "</p>";
+                    echo "<option>" . $row["fname"] . " " . $row["lname"] . "</option>";
                 }
             } else{
-                echo "<p>No matches found</p>";
+                echo "<option>No matches found</option>";
             }
         } else{
             echo "ERROR: Could not able to execute $sql. " . mysqli_error($db);

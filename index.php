@@ -66,7 +66,7 @@
       $('.searchTerm').on("keyup input", function(){
           /* Get input value on change */
           var inputVal = $(this).val();
-          var resultDropdown = $(this).siblings(".livesearch");
+          var resultDropdown = $(this).siblings("#livesearch");
           if(inputVal.length){
               $.get("livesearch.php", {term: inputVal}).done(function(data){
                   // Display the returned data in browser
@@ -78,9 +78,9 @@
       });
       
       // Set search input value on click of result item
-      $(document).on("click", ".livesearch p", function(){
+      $(document).on("click", "#livesearch option", function(){
           $(this).parents(".search").find('.searchTerm').val($(this).text());
-          $(this).parent(".livesearch").empty();
+          $(this).parent("#livesearch").empty();
       });
     });
   </script>
@@ -88,11 +88,11 @@
   <div class="wrap">
   <div class="search">
       <form method="get" action="search.php" target="_blank">
-     <input type="text" class="searchTerm" placeholder="SEARCH HERE" name = "q" autocomplete="off">      
+     <input type="text" list="livesearch" class="searchTerm" placeholder="SEARCH HERE" name = "q" autocomplete="off">      
      <button type="submit" class="searchButton" >
        <i class="fa fa-search"></i>
     </button>
-    <div class="livesearch"></div>
+    <datalist id="livesearch"></datalist>
     </form>
     
   </div>

@@ -92,16 +92,11 @@ if (isset($_POST['login_user'])) {
       $_SESSION['tempusername'] = $username;
       
       if(mysqli_num_rows(mysqli_query($db,"SELECT * FROM users WHERE username='$username' AND password='$password' AND verifi = 1"))){
-      // $_SESSION['success'] = "You are now logged in";
-      // $_SESSION['username'] = $username;
-      // $errl = null;
-      // $_SESSION['forget_cpwd'] = null;
-      // $_SESSION['verific'] = null;
-      // $_SESSION['verifycode'];
-      session_destroy();
-      $_SESSION['username'] = $username;
-      header('location:'.$_SESSION['page'] );
       
+        session_destroy();
+        $_SESSION['username'] = $username;
+        header('location:'.$_SESSION['page'] );
+        
       }else{
         $eee = mysqli_fetch_assoc(mysqli_query($db,$query));
         $email = $eee['email'];
@@ -117,9 +112,9 @@ if (isset($_POST['login_user'])) {
         $mail->isHTML(true);
         $mail->Body = "Enter the code to verify your account: ".$_SESSION['verifycode'];
       
-      if(!$mail->send()){
-        array_push($errors,"Internal error occured");
-      }
+        if(!$mail->send()){
+          array_push($errors,"Internal error occured");
+        }
         else{
           echo "Done";
           $_SESSION['verific'] = 1;
@@ -212,7 +207,5 @@ if(isset($_POST['forget_pwd'])){
         $errl = 1;
       }
 }
-
-
 
 ?>

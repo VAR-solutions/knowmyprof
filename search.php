@@ -1,7 +1,6 @@
 <?php
 session_start();
 include('serv.php');
-// $db = mysqli_connect('localhost', 'itbois', 'password', 'it');
 //database configuration
 require ('config.php');
 
@@ -10,7 +9,6 @@ if(!empty($_GET['q'])){
     $s = $_GET['q'];
     $arr = explode(' ', trim($s));
     $name = $arr[0];
-    // $res = mysqli_query($db,"SELECT * FROM prof WHERE First_Name LIKE '" . mysql_real_escape_string( $name ) . "%' OR Last_Name LIKE '" . mysql_real_escape_string( $name ) ."%'";
     $sql="SELECT * FROM prof WHERE fname LIKE '" . mysqli_real_escape_string($db, $name ) . "%' OR lname LIKE '" . mysqli_real_escape_string($db, $name ) ."%'";
     $result = mysqli_query($db,$sql);
 }
@@ -68,7 +66,6 @@ if(!empty($_GET['q'])){
         </a>
       </div>
       <?php else : ?>
-      <!-- <h2 style="text-align:center">No result Found</h2> -->
       <br>
       <img src="noresult.png" class="cen" >
       <br>

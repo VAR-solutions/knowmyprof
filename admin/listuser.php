@@ -24,7 +24,7 @@ $result = mysqli_query($db, "SELECT * FROM users");
             <p>Registered Users</p>
             <hr>
         </div>
-        <div class="side-body">
+        <div class="side-body detaillist">
             <ul>
                 <?php
                     while ($row = mysqli_fetch_array($result)) {

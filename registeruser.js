@@ -74,36 +74,4 @@ $('document').ready(function () {
         });
     });
 
-    // $('#sign').on('click', function () {
-    //     var fname = $('#fname').val();
-    //     var lname = $('#lname').val();
-    //     var username = $('#username').val();
-    //     var email = $('#email').val();
-    //     var password = $('#password2').val();
-    //     if (username_state == false || email_state == false) {
-    //         $('#error_msg').text('Fix the errors in the form first');
-    //     } else {
-    //         // proceed with form submission
-    //         $.ajax({
-    //             url: 'index.php',
-    //             type: 'post',
-    //             data: {
-    //                 'save': 1,
-    //                 'fname': fname,
-    //                 'lname': lname,
-    //                 'email': email,
-    //                 'username': username,
-    //                 'password': password,
-    //             },
-    //             success: function (response) {
-    //                 $('#succ').text('Registered Successfully');
-    //                 $('#fname').val('');
-    //                 $('#lname').val('');
-    //                 $('#username').val('');
-    //                 $('#email').val('');
-    //                 $('#password2').val('');
-    //             }
-    //         });
-    //     }
-    // });
 });

@@ -71,7 +71,7 @@ if(isset($_POST['edit'])){
                     <!-- Image -->
                     <input type="file" name="image" onchange="readURL(this);" value="UPLOAD">
                     <img id="primg" style="float: none;" src="<?php echo 'data:image/jpeg;base64,' . base64_encode($row['image']) ?>" alt="Card image">    
-                    <img id="blah" src="#" alt="your image" hidden/>
+                    <img id="blah" src="<?php echo 'data:image/jpeg;base64,' . base64_encode($row['image']) ?>" alt="your image" hidden/>
                 </div>
             </div>
             <div class="row">

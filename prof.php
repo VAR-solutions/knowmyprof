@@ -56,39 +56,23 @@ if(isset($_POST['editr'])){
              
         </div>
         <div class = "col-md-8 col-sm-1 col-xs-1 data">    
-        <div class = "name"><?php echo $row['fname'] . " " . $row['lname']; ?></div>
-        <ul>
-            <!-- <li style = "color: #296dd2">
-                B.tech Information Technology,IIIT Vadodara
-            </li>
-            <li style = "color: #296dd2" >
-                M.tech Information Technology,IIT Bombay
-            </li> -->
+            <div class = "name"><?php echo $row['fname'] . " " . $row['lname']; ?></div>
+            <ul>
+            <!-- Qualifications -->
             <?php $w = preg_split('/$\R?^/m', $row['qual']); ?>
             <?php foreach ($w as $qua) : ?>
                 <li style = "color: #296dd2"><?php echo $qua; ?></li>
             <?php endforeach; ?>
             
-            <!-- <br> -->
-            
-            <!-- <li >
-                Assistant Professor,IIT Kanpur (2017-present)
-            </li>
-            <li>
-                Teaching Assistant,IIIT Vadodara (2012-2017)
-            </li> -->
-        <!-- </ul>
-        <p>Teaches
-            <ul> -->
-                <br>
-                <?php $w = preg_split('/$\R?^/m', $row['exp']); ?>
-                <?php foreach ($w as $qua) : ?>
-                    <li style = "color: #296dd2"><?php echo $qua; ?></li>
-                <?php endforeach; ?>
+            <br>
+
+            <!-- Teaches -->
+            <?php $w = preg_split('/$\R?^/m', $row['exp']); ?>
+            <?php foreach ($w as $qua) : ?>
+                <li style = "color: #296dd2"><?php echo $qua; ?></li>
+            <?php endforeach; ?>
                 
-                <!-- <br> -->
             </ul>
-        <!-- </p> -->
         </div>
     </div>
     <div class = "row contacts">

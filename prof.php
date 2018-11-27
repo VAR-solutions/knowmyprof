@@ -69,7 +69,7 @@ if(isset($_POST['editr'])){
             <!-- Teaches -->
             <?php $w = preg_split('/$\R?^/m', $row['exp']); ?>
             <?php foreach ($w as $qua) : ?>
-                <li style = "color: #296dd2"><?php echo $qua; ?></li>
+                <li style = "color: black;"><?php echo $qua; ?></li>
             <?php endforeach; ?>
                 
             </ul>

@@ -69,7 +69,7 @@ if(isset($_POST['editr'])){
                 <li style = "color: #296dd2"><?php echo $qua; ?></li>
             <?php endforeach; ?>
             
-            <br>
+            <!-- <br> -->
             
             <!-- <li >
                 Assistant Professor,IIT Kanpur (2017-present)
@@ -77,7 +77,18 @@ if(isset($_POST['editr'])){
             <li>
                 Teaching Assistant,IIIT Vadodara (2012-2017)
             </li> -->
-        </ul>
+        <!-- </ul>
+        <p>Teaches
+            <ul> -->
+                <br>
+                <?php $w = preg_split('/$\R?^/m', $row['exp']); ?>
+                <?php foreach ($w as $qua) : ?>
+                    <li style = "color: #296dd2"><?php echo $qua; ?></li>
+                <?php endforeach; ?>
+                
+                <!-- <br> -->
+            </ul>
+        <!-- </p> -->
         </div>
     </div>
     <div class = "row contacts">

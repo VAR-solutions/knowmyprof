@@ -95,6 +95,7 @@ if (isset($_POST['login_user'])) {
       if(mysqli_num_rows(mysqli_query($db,"SELECT * FROM users WHERE username='$username' AND password='$password' AND verifi = 1"))){
       
         session_destroy();
+        session_start();
         $_SESSION['username'] = $username;
         header('location:'.$_SESSION['page'] );
         

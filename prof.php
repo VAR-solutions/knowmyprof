@@ -123,7 +123,7 @@ if(isset($_POST['editr'])){
     </div>
     </div>
     <hr class="part"> 
-
+    <!-- review -->
     <div class="revi">
         <h2 id="heading">Reviews</h2>
         <?php if($tt == 1 ) : ?>

@@ -13,33 +13,62 @@ phpMyAdmin
 ```
 ### Installing(UBUNTU)
 
-1- Open phpMyAdmin and create a user with username 'itbois' and password 'Password@123'
+Follow the steps to setup the project on your system-
 
-2- Setup Postfix on your system <a href="https://opensourceinside.blogspot.com/2016/09/how-to-install-and-configure-postfix-to.html">Click Here</a> for help
+  1. Open phpMyAdmin and create a user with username 'itbois' and password 'Password@123'
 
-3- cd to_your_hosting_dir (apache root dir)
+  2. Setup Postfix on your system [Click Here](https://opensourceinside.blogspot.com/2016/09/how-to-install-and-configure-postfix-to.html) for help
 
-4- clone this repository
+  3. Open Terminal and Clone the Repository
+  ```
+  cd dir_name(Apache localhost Directory)
+  git clone https://github.com/VAR-solutions/knowmyprof.git
+  ```
+  4. Open your browser and Goto below mentioned link to install Database:
+  ```
+  localhost/knowmyprof/install.php
+  ```
+  
+#### For Users
+  * Open your Browser and goto following address-
+  ```
+  localhost/knowmyprof
+  ```
+  * Click on Signup to create your Account
+    1. Fill the Required Details
+    2. Enter the Verification Code received on your E-Mail (check Spams)
+  * Already Registered? Click on Login
+    1. Fill Roll Number and Password to login
+    2. Forgot Password? Click on Forgot Password and Enter the Verification Code and then Change Password
+  * Search Your Professor.
+  * Click on Professor Card to see details.
+  * Give Review to your Professor (Login Required).
 
-```
-git clone https://github.com/VAR-solutions/knowmyprof.git
-```
-5- Open your browser and go to following address:
-```
-localhost/knowmyprof/install.php
-```
-This will initialize the database and store some data.
-
-#### For User end
-```
-localhost/knowmyprof
-```
 #### For Admin site
-```
-localhost/knowmyprof/admin
-```
-And enter following the credentials-
-```
-username:12345
-password:qwerty
-```
+  * Open your Browser and goto following address-
+  ```
+  localhost/knowmyprof/admin
+  ```
+  * Enter following the credentials-
+  ```
+  username:12345
+  password:qwerty
+  ```
+  * Click on Add Professor to add a new professor
+  * Click on Professor List to see all professors
+    * Select a professor to see all details
+    * Click on Edit to update details
+    * Choose New Image
+    * Click on Save.
+  * Click on Users to see list of Registerd Users
+  * Click on Reviews to see all reviews
+  * Click on View Site to see LIVE Demonstration
+
+### Built With-
+* PHP (Scripting Language)
+* HTML
+* CSS (Style Sheets)
+* JavaScript
+* MySQL (Database)
+* Apache (Web Server)
+

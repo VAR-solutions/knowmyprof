@@ -42,7 +42,7 @@ if (isset($_POST['reg_user'])) {
 					$query = "INSERT INTO prof (fname, lname, aoi,email,qual, achi,image,pub,web,linkedin,exp)
 								VALUES('$fname', '$lname','$aoi' ,'$email','$qual', '$achi', '$imgContent','$pub','$web','$linkedin','$exp')";
 					mysqli_query($db, $query);
-					$_SESSION['success'] = "You are now logged in";
+					
 					header('location: index.php');
 				}
 		}	

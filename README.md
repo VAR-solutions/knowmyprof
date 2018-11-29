@@ -15,7 +15,7 @@ phpMyAdmin
 
 1- Open phpMyAdmin and create a user with username 'itbois' and password 'Password@123'
 
-2- Setup Postfix on your system <a href="https://opensourceinside.blogspot.com/2016/09/how-to-install-and-configure-postfix-to.html">Like this</a>
+2- Setup Postfix on your system <a href="https://opensourceinside.blogspot.com/2016/09/how-to-install-and-configure-postfix-to.html">Click Here</a> for help
 
 3- cd to_your_hosting_dir(apache root dir)
 

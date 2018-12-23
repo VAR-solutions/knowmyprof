@@ -45,7 +45,7 @@ Follow the steps to setup the project on your system-
   * Give Review to your Professor (Login Required).
 
 #### For Admin site
-  * Open your Browser and goto following address-
+  * Open your Browser and goto following address:-
   ```
   localhost/knowmyprof/admin
   ```
@@ -64,7 +64,7 @@ Follow the steps to setup the project on your system-
   * Click on Reviews to see all reviews
   * Click on View Site to see LIVE Demonstration
 
-### Built With-
+### Built With:-
 * PHP (Scripting Language)
 * HTML
 * CSS (Style Sheets)

@@ -1,5 +1,5 @@
 # Know My Professor
-IT-202 Project
+IT-202(Intro to INFORMATION TECHNOLOGY) Project
 
 We are using LAMP stack for this project.
 ### Prerequisites

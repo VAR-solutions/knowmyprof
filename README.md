@@ -5,7 +5,7 @@ IT-202(Intro to INFORMATION TECHNOLOGY) Project
 
 ### About
 
-This website shows the details of all the professors in the institute. Students and write reviews about the professors too.
+This website shows the details of all the professors in the institute. Students can write reviews about the professors too.
 
 ![Professor Profile](snapshots/prof.png)
 

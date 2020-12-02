@@ -1,13 +1,13 @@
 # Know My Professor
 IT-202(Intro to INFORMATION TECHNOLOGY) Project
 
-![Home Page](snapshots/home.png)
+<kbd>![Home Page](snapshots/home.png)</kbd>
 
 ### About
 
 This website shows the details of all the professors in the institute. Students can write reviews about the professors too.
 
-![Professor Profile](snapshots/prof.png)
+<kbd>![Professor Profile](snapshots/prof.png)</kbd>
 
 We are using LAMP stack for this project.
 ### Prerequisites
